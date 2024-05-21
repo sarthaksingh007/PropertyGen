@@ -1,6 +1,11 @@
 import Gott from "./../assets/got.png";
 import search from "./../assets/search.png";
 const Hero1 = () => {
+    const shadowStyle = {
+        WebkitBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
+        MozBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
+        boxShadow: "0px 0px 27px 4px rgba(0,9,31,1)"
+      };
   return (
     <div>
       <img src={Gott} alt="" className="sm:p-4 p-7 sm:w-2/5  mx-auto" />
@@ -11,7 +16,7 @@ const Hero1 = () => {
           consultant!
         </span>
       </p>
-      <div className="rounded-full p-2 bg-red-300 sm:w-7/12 w-11/12 mx-auto">
+      <div style={shadowStyle} className="rounded-full p-2  sm:w-7/12 w-11/12 mx-auto bg-[#2b292959]">
         <div className="flex flex-row justify-between items-center sm:w-full mx-auto bg-white rounded-3xl p-1 ">
           <input
             type="text"

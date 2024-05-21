@@ -10,30 +10,42 @@ const items = [
     viewing: "3324 viewing",
     title: "M3M Paragon",
     spaces: ["Retail Space", "Office Space"],
-    rating: 4
+    rating: 4,
   },
   {
     location: "Gurgaon, Sector 24",
     viewing: "3324 viewing",
     title: "M3M Paragon",
     spaces: ["Retail Space", "Office Space"],
-    rating: 4
+    rating: 4,
   },
   {
     location: "Gurgaon, Sector 24",
     viewing: "3324 viewing",
     title: "M3M Paragon",
     spaces: ["Retail Space", "Office Space"],
-    rating: 4
-  }
+    rating: 4,
+  },
 ];
 
 const Hero3 = () => {
+    const shadowStyle = {
+        WebkitBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
+        MozBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
+        boxShadow: "0px 0px 27px 4px rgba(0,9,31,1)"
+      };
+
   return (
     <div>
-      <div className="flex sm:flex-row flex-col justify-between p-2 sm:w-4/5 w-11/12 mx-auto my-16 rounded-2xl  items-center bg-gray-500 bg-opacity-95">
+      <div
+        className="flex sm:flex-row flex-col justify-between p-2 sm:w-4/5 w-11/12 mx-auto my-16 rounded-2xl  items-center bg-opacity-85 bg-[#2b292959]"
+        style={shadowStyle}
+      >
         {items.map((item, index) => (
-          <div key={index} className="takelook p-3 flex flex-col justify-between h-96  rounded-2xl">
+          <div
+            key={index}
+            className="takelook p-3 flex flex-col justify-between h-96 m-2  rounded-2xl"
+          >
             <div className="flex flex-row items-center justify-between ">
               <p className="flex flex-row justify-center items-center text-white ">
                 <HiOutlineLocationMarker />
@@ -45,10 +57,14 @@ const Hero3 = () => {
               </p>
             </div>
             <div className="flex flex-col justify-start items-start my-3 mx-5">
-              <h1 className="text-white text-3xl font-bold my-2">{item.title}</h1>
+              <h1 className="text-white text-3xl font-bold my-2">
+                {item.title}
+              </h1>
               <ul className="list-disc text-white flex flex-row justify-between items-center">
                 {item.spaces.map((space, index) => (
-                  <li key={index} className="mx-4">{space}</li>
+                  <li key={index} className="mx-4">
+                    {space}
+                  </li>
                 ))}
               </ul>
               <div className="flex flex-row justify-between items-center text-lg">

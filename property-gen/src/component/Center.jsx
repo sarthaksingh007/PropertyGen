@@ -46,9 +46,14 @@ const features = [
 ];
 
 const Center = () => {
+  const shadowStyle = {
+    WebkitBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
+    MozBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
+    boxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
+  };
   return (
-    <div>
-      <div className="p-2 rounded-3xl bg-red-100 sm:w-4/5 w-11/12 mx-auto">
+    <div className="hero2">
+      <div style={shadowStyle} className="p-2 rounded-3xl bg-[#2b292959] sm:w-4/5 w-11/12 mx-auto">
         <h1 className="text-left text-white sm:text-5xl text-3xl sm:w-2/4 w-11/12  font-extrabold  my-10">
           <span className="gotpara">Property Genius</span> takes the guesswork
           out of the equation.

@@ -1,12 +1,17 @@
 body {
   background-color: #00091f;
+  background-image: url(./assets/back2.png), url(./assets/back3.png), url(./assets/back4.png);
+  /* background-position: ?; */
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .hero{
   background-image: url(./assets/back1.png);
   background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-size:cover;
+  background-repeat: repeat;
 }
+
 
 .gotpara {
   background-image: url(./assets/download.png);
@@ -61,5 +66,15 @@ body {
   border-radius: inherit; /* Inherit border-radius from parent */
   background: linear-gradient(90deg, #FF0056 0%, #A21DED 65%, #A21DED 100%);
   z-index: -1; /* Place the pseudo-element behind the content */
+}
+
+@media only screen and (max-width: 600px) {
+  .hero3{
+    /* background-color: #00091f; */
+    background-image: url(./assets/back2.png);
+    /* background-position: ?; */
+    background-size: contain;
+    background-repeat:no-repeat;
+  }
 }
 
