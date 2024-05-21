@@ -1,0 +1,65 @@
+body {
+  background-color: #00091f;
+}
+.hero{
+  background-image: url(./assets/back1.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.gotpara {
+  background-image: url(./assets/download.png);
+  background-clip: text;
+  -webkit-background-clip: text; /* For Safari */
+  color: transparent;
+}
+
+.gradient {
+  background: linear-gradient(to bottom, #ff0056 0%, #a21ded 50%, #a21ded 85%);
+}
+
+.takelook{
+  background-image: url(./assets/look1.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.takelook1{
+  background-image: url(./assets/look2.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.takelook2{
+  background-image: url(./assets/look3.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.custom-gradient {
+  background: linear-gradient(60deg, #FF0056 0%, #A21DED 95%, #A21DED 10%);
+}
+
+/* Define the gradient */
+.custom-gradient2 {
+  background: linear-gradient(180deg, #00091F 5%, #A21DED 85%, #A21DED 100%);
+}
+.gradient-border {
+  position: relative;
+  padding: 10px; /* Adjust the padding as needed */
+  border-radius: 10px; /* Set background to match the inner background color */
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: inherit; /* Inherit border-radius from parent */
+  background: linear-gradient(90deg, #FF0056 0%, #A21DED 65%, #A21DED 100%);
+  z-index: -1; /* Place the pseudo-element behind the content */
+}
+
