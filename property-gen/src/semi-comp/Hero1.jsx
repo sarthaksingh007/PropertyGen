@@ -17,7 +17,7 @@ const Hero1 = () => {
         </span>
       </p>
       <div style={shadowStyle} className="rounded-full p-2  sm:w-7/12 w-11/12 mx-auto bg-[#2b292959]">
-        <div className="flex flex-row justify-between items-center sm:w-full mx-auto bg-white rounded-3xl p-1 ">
+        <div style={{boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 15, border: '1px white solid'}} className="flex flex-row justify-between items-center sm:w-full mx-auto bg-white rounded-3xl p-1 ">
           <input
             type="text"
             name=""
