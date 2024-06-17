@@ -1,17 +1,16 @@
 body {
   background-color: #00091f;
-  background-image: url(./assets/back2.png), url(./assets/back3.png), url(./assets/back4.png);
-  /* background-position: ?; */
+  background-image: url(./assets/finalback.png);
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.hero{
+/* .hero {
   background-image: url(./assets/back1.png);
   background-position: center;
-  background-size:cover;
+  background-size: cover;
   background-repeat: repeat;
-}
-
+} */
 
 .gotpara {
   background-image: url(./assets/download.png);
@@ -24,57 +23,56 @@ body {
   background: linear-gradient(to bottom, #ff0056 0%, #a21ded 50%, #a21ded 85%);
 }
 
-.takelook{
+.takelook {
   background-image: url(./assets/look1.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-.takelook1{
+.takelook1 {
   background-image: url(./assets/look2.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-.takelook2{
+.takelook2 {
   background-image: url(./assets/look3.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .custom-gradient {
-  background: linear-gradient(60deg, #FF0056 0%, #A21DED 95%, #A21DED 10%);
+  background: linear-gradient(60deg, #ff0056 0%, #a21ded 95%, #a21ded 10%);
 }
 
 /* Define the gradient */
 .custom-gradient2 {
-  background: linear-gradient(180deg, #00091F 5%, #A21DED 85%, #A21DED 100%);
+  background: linear-gradient(200deg, #00091f 5%, #a21ded 85%, #a21ded 100%);
 }
 .gradient-border {
   position: relative;
-  padding: 10px; /* Adjust the padding as needed */
+  padding: 1px; /* Adjust the padding as needed */
   border-radius: 10px; /* Set background to match the inner background color */
 }
 
 .gradient-border::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
   border-radius: inherit; /* Inherit border-radius from parent */
-  background: linear-gradient(90deg, #FF0056 0%, #A21DED 65%, #A21DED 100%);
+  background: linear-gradient(90deg, #ff0056 0%, #a21ded 65%, #a21ded 100%);
   z-index: -1; /* Place the pseudo-element behind the content */
 }
 
 @media only screen and (max-width: 600px) {
-  .hero3{
-    /* background-color: #00091f; */
-    background-image: url(./assets/back2.png);
-    /* background-position: ?; */
-    background-size: contain;
-    background-repeat:no-repeat;
+  body {
+    background-color: #00091f;
+    background-image: url(./assets/smallbg.png);
+    background-position:top;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
-

@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Hero />
       <Center />
-      <ProCard />
+      {/* <ProCard /> */}
       <Last />
     </>
   );
