@@ -38,13 +38,13 @@ const Hero3 = () => {
   return (
     <div>
       <div
-        className="flex sm:flex-row flex-col justify-between sm:p-2 p-4 sm:w-4/5 w-11/12 mx-auto my-16 rounded-2xl  items-center bg-opacity-85 bg-[#2b292959]"
+        className="flex sm:flex-row flex-col justify-between sm:p-2 p-2 sm:w-4/5 w-11/12 mx-auto my-16 rounded-2xl  items-center bg-opacity-85 bg-[#2b292959]"
         style={shadowStyle}
       >
         {items.map((item, index) => (
           <div
             key={index}
-            className={`p-3 flex flex-col sm:w-[28%] w-full justify-between sm:h-96 h-72  sm:m-2 sm:my-4 my-2 rounded-2xl ${
+            className={`p-3 flex flex-col sm:w-[28%] w-full justify-between sm:h-96 h-58  sm:m-2 sm:my-4 my-2 rounded-2xl ${
               index === 0
                 ? "takelook"
                 : index === 1
