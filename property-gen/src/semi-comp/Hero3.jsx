@@ -44,7 +44,7 @@ const Hero3 = () => {
         {items.map((item, index) => (
           <div
             key={index}
-            className={`p-3 flex flex-col sm:w-[28%] w-full justify-between sm:h-96 h-72  sm:m-2 my-4 rounded-2xl ${
+            className={`p-3 flex flex-col sm:w-[28%] w-full justify-between sm:h-96 h-72  sm:m-2 sm:my-4 my-2 rounded-2xl ${
               index === 0
                 ? "takelook"
                 : index === 1

@@ -7,7 +7,7 @@ const Hero2 = () => {
         <p className="text-gray-300 my-3 text-xl w-11/12 ml-auto">
           Trending prompt
         </p>
-        <div className="flex flex-row justify-evenly items-center overflow-x-auto sm:overflow-x-hidden w-full">
+        <div className="flex mx-4 flex-row justify-evenly items-center overflow-x-auto sm:overflow-x-hidden w-full">
           {[
             { id: "#01", text: "2BHK apartments with returns" },
             { id: "#02", text: "Office Space with high returns" },
@@ -20,7 +20,7 @@ const Hero2 = () => {
               <p className="gradient text-white sm:p-2 p-3 sm:text-xl text-base font-semibold rounded-full">
                 {item.id}
               </p>
-              <p className="text-black p-2 text-lg font-semibold">
+              <p className="text-black p-2 sm:text-lg text-sm font-semibold">
                 {item.text}
               </p>
             </div>
