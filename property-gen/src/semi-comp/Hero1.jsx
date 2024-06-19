@@ -23,18 +23,19 @@ const Hero1 = () => {
         <div
           style={{
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-            borderRadius: 15,
+            borderRadius: 80,
             border: "1px white solid",
           }}
-          className="flex flex-row justify-between items-center sm:w-full mx-auto bg-white rounded-full p-1 "
+          className="flex flex-row justify-between items-center sm:w-full mx-auto bg-white rounded-full p-1"
         >
           <input
             type="text"
+            placeholder="ask me anythink....."
             name=""
             id=""
-            className="focus:outline-none w-full rounded-full text-lg sm:px-2 px-1"
+            className="focus:outline-none w-full rounded-full text-lg sm:px-3 p-3 "
           />{" "}
-          <img src={search} alt="" className="sm:w-10 w-9" />
+          <img src={search} alt="" className="sm:w-10 w-12" />
         </div>
       </div>
     </div>
