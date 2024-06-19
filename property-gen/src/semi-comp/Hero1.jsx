@@ -8,7 +8,7 @@ const Hero1 = () => {
   };
   return (
     <div className="herrr">
-      <img src={Gott} alt="" className="sm:p-4 p-7 sm:w-2/5  mx-auto" />
+      <img src={Gott} alt="" className="sm:p-4  sm:w-2/5 w-3/4 p-4  mx-auto" />
       <p className="text-white sm:w-2/5 sm:text-xl text-md p-2 my-3 text-center mx-auto">
         That’s all it takes to find your perfect property with{" "}
         <span className="gotpara ">
