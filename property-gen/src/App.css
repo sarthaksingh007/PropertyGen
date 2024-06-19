@@ -26,20 +26,20 @@ body {
 .takelook {
   background-image: url(./assets/look1.webp);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: auto;
+  background-position: 10% 10%;
 }
 .takelook1 {
   background-image: url(./assets/look2.webp);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: auto;
+  background-position: 10% 10%;
 }
 .takelook2 {
   background-image: url(./assets/look3.webp);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: auto;
+  background-position: 10% 10%;
 }
 .custom-gradient {
   background: linear-gradient(60deg, #ff0056 0%, #a21ded 95%, #a21ded 10%);

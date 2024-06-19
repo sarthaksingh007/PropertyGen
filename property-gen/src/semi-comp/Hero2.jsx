@@ -15,9 +15,9 @@ const Hero2 = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-white flex flex-row justify-between items-center whitespace-nowrap rounded-full m-2 p-2"
+              className="bg-white flex flex-row justify-between items-center whitespace-nowrap rounded-full m-2 "
             >
-              <p className="gradient text-white p-2 text-xl font-semibold rounded-full">
+              <p className="gradient text-white sm:p-2 p-3 sm:text-xl text-base font-semibold rounded-full">
                 {item.id}
               </p>
               <p className="text-black p-2 text-lg font-semibold">
