@@ -1,26 +1,54 @@
-// import React from "react";
-import Logo from "./../assets/logo.png";
-import Dadu from "./../assets/ellipse.png";
-import navBtn from "./../assets/back_btn.png";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { BsStars, BsList, BsX } from "react-icons/bs";
+import logo from "./../assets/propit1.png";
+import Dadu from "./../assets/propit2.png";
+import Back from "./../assets/back_btn.png";
+
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div>
-      <header className="text-gray-600 body-font">
-        <div className=" mx-auto flex  flex-row items-center justify-between sm:px-16 px-4 py-5">
-          <img src={Logo} alt="" className="cursor-pointer sm:w-1/6 w-2/5 mr-6"/>
-          <div className="flex flex-row justify-end items-center">
-            <img src={Dadu} alt="" className="cursor-pointer sm:w-1/6 w-1/5 mr-6"/>
-            <img src={navBtn} alt="" className="cursor-pointer sm:w-1/6 w-1/5"/>
-          </div>
-          {/* <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a className="mr-5 hover:text-gray-900">First Link</a>
-            <a className="mr-5 hover:text-gray-900">Second Link</a>
-            <a className="mr-5 hover:text-gray-900">Third Link</a>
-            <a className="mr-5 hover:text-gray-900">Fourth Link</a>
-          </nav> */}
+    <header className="text-white body-font  sm:px-8 px-1">
+      <div className="container mx-auto flex flex-wrap sm:p-5 px-5 pt-5 pb-0 justify-between items-start md:flex-row sm:items-center">
+        <Link
+          to="/"
+          className="flex title-font font-medium items-center mb-4 md:mb-0"
+        >
+          <img src={logo} alt="Logo" className="w-auto h-8 " />
+        </Link>
+        <nav
+          className={`relative   flex sm:flex-row flex-col sm:mt-1 mt-20  flex-wrap items-center text-base justify-center md:flex-row transition-opacity duration-300 ${
+            isOpen ? "opacity-100" : "opacity-0 hidden md:opacity-100 md:flex"
+          }`}
+        >
+          <Link to="/" className="mr-5 cursor-pointer sm:mb-0 mb-5  beviet ">
+            About Us
+          </Link>
+          <Link to="/" className="mr-5 cursor-pointer sm:mb-0 mb-5 beviet ">
+            Builder Forum
+          </Link>
+          <Link to="/" className="mr-5 cursor-pointer sm:mb-0 mb-5 beviet ">
+            Contact us
+          </Link>
+        </nav>
+        <button
+          aria-label="Toggle Menu"
+          className="inline-flex md:hidden items-center text-[blue]  border-0  px-3 text-3xl focus:outline-none rounded   md:mt-0"
+          onClick={toggleMenu}
+        >
+          {isOpen ? <BsX /> : <img src={Back} className="sm:w-[100%] w-[2.4rem] cursor-pointer" alt="" />}
+        </button>
+        <div className="sm:flex hidden flex-row justify-end items-center sm:w-min">
+          <img src={Dadu} className="sm:w-[100%] w-20 mr-10 cursor-pointer" alt="" />
+          {/* <img src={Back} className="sm:w-[100%] w-20 cursor-pointer" alt="" /> */}
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 };
 
