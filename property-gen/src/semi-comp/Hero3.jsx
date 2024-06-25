@@ -93,9 +93,9 @@ const Hero3 = () => {
             
           </div>
         ))} */}
-        <img src={Block} alt="" />
-        <img src={Block1} alt="" />
         <img src={Block2} alt="" />
+        <img src={Block1} alt="" />
+        <img src={Block} alt="" />
       </div>
     </div>
   );
