@@ -53,33 +53,36 @@ const Center = () => {
   };
   return (
     <div className="hero2">
-  <div style={shadowStyle} className="p-2 rounded-3xl bg-[#2b292959] sm:w-4/5 w-11/12 mx-auto">
-    <h1 className="text-left text-white sm:text-5xl text-2xl sm:w-2/4 w-11/12 font-extrabold my-10">
-      <span className="gotpara">Property Genius</span> takes the guesswork out of the equation.
-    </h1>
-    <div className="flex flex-wrap justify-evenly items-center">
-      {features.map((feature, index) => (
-        <div
-          key={index}
-          className="flex flex-col justify-center items-center sm:p-3 p-1 my-4 custom-gradient2 relative sm:m-4 m-2 rounded-2xl sm:w-1/4 w-2/5 gradient-border sm:h-84 h-[20rem]"
-        >
-          <img
-            src={feature.image}
-            alt=""
-            className="absolute sm:top-[-40px] sm:left-4 top-[-20px] left-2 sm:w-auto w-10"
-          />
-          <h1 className="text-white text-left sm:text-2xl text-xl px-2 sm:px-4 font-bold mt-10">
-            {feature.title}
-          </h1>
-          <p className="text-white text-left sm:text-lg text-sm p-2 sm:p-4">
-            {feature.description}
-          </p>
+      <div
+        style={shadowStyle}
+        className="p-2 rounded-3xl bg-[#2b292959] sm:w-4/5 w-11/12 mx-auto"
+      >
+        <h1 className="text-left sm:ml-1 ml-5 text-white sm:text-5xl text-2xl sm:w-2/4 w-11/12 font-extrabold my-2 mb-7">
+          <span className="gotpara">Property Genius</span> takes the guesswork
+          out of the equation.
+        </h1>
+        <div className="flex flex-wrap justify-evenly items-center">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="flex flex-col justify-center items-center sm:p-3 p-1 my-4 custom-gradient2 relative sm:m-4 m-2 rounded-2xl sm:w-1/4 w-2/5 gradient-border sm:h-84 h-[20rem]"
+            >
+              <img
+                src={feature.image}
+                alt=""
+                className="absolute sm:top-[-40px] sm:left-4 top-[-20px] left-2 sm:w-auto w-10"
+              />
+              <h1 className="text-white text-left sm:text-2xl text-xl px-2 sm:px-4 font-bold mt-10">
+                {feature.title}
+              </h1>
+              <p className="text-white text-left sm:text-lg text-sm p-2 sm:p-4">
+                {feature.description}
+              </p>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
-  </div>
-</div>
-
   );
 };
 

@@ -258,7 +258,7 @@ function Chatbot() {
       className={
         showChatbot
           ? "dm mx-auto sm:w-full w-full bg-[#FFFFFF]  bg-opacity-100 rounded-lg border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]"
-          : "dm mx-auto sm:w-2/4 w-11/12   bg-opacity-100 mb-4 rounded-full border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]"
+          : "dm mx-auto sm:w-2/4     "
       }
     >
       <div
@@ -385,7 +385,7 @@ function Chatbot() {
         className={
           showChatbot
             ? "sticky bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap"
-            : "flex flex-row sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap"
+            : "flex flex-row sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]  "
         }
       >
         <div
@@ -394,7 +394,7 @@ function Chatbot() {
             borderRadius: 80,
             border: "1px white solid",
           }}
-          className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[94%]  bg-white rounded-full p-1"
+          className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1"
         >
           <input
             type="text"

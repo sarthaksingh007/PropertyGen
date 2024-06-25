@@ -17,6 +17,7 @@ body {
   background-clip: text;
   -webkit-background-clip: text; /* For Safari */
   color: transparent;
+  background-position: center;
 }
 
 .gradient {
@@ -47,7 +48,8 @@ body {
 
 /* Define the gradient */
 .custom-gradient2 {
-  background: linear-gradient(200deg, #00091f 5%, #a21ded 85%, #a21ded 100%);
+  background: linear-gradient(135deg, rgb(30, 30, 72), rgb(57, 30, 114));
+
 }
 .gradient-border {
   position: relative;
