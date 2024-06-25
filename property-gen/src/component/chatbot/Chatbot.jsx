@@ -396,7 +396,7 @@ function Chatbot() {
       >
         <div
           
-          className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2"
+          className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-3xl p-1  border-gray-300 border-2"
         >
           <input
             type="text"
