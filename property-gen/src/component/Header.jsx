@@ -19,7 +19,7 @@ const Header = () => {
           to="/"
           className="flex title-font font-medium items-center mb-4 md:mb-0"
         >
-          <img src={logo} alt="Logo" className="w-auto h-8 " />
+          <img src={logo} alt="Logo" className="w-auto sm:h-8 h-12 " />
         </Link>
         <nav
           className={`relative   flex sm:flex-row flex-col sm:mt-1 mt-20  flex-wrap items-center text-base justify-center md:flex-row transition-opacity duration-300 ${
@@ -38,13 +38,25 @@ const Header = () => {
         </nav>
         <button
           aria-label="Toggle Menu"
-          className="inline-flex md:hidden items-center text-[blue]  border-0  px-3 text-3xl focus:outline-none rounded   md:mt-0"
+          className="inline-flex md:hidden items-center text-[blue]  border-0  sm:px-3 px-0 text-3xl focus:outline-none rounded   md:mt-0"
           onClick={toggleMenu}
         >
-          {isOpen ? <BsX /> : <img src={Back} className="sm:w-[100%] w-[2.4rem] cursor-pointer" alt="" />}
+          {isOpen ? (
+            <BsX />
+          ) : (
+            <img
+              src={Back}
+              className="sm:w-[100%] sm:mt-0 mt-1  w-[2.4rem] cursor-pointer"
+              alt=""
+            />
+          )}
         </button>
         <div className="sm:flex hidden flex-row justify-end items-center sm:w-min">
-          <img src={Dadu} className="sm:w-[100%] w-20 mr-10 cursor-pointer" alt="" />
+          <img
+            src={Back}
+            className="sm:w-[100%] w-20 mr-10 cursor-pointer"
+            alt=""
+          />
           {/* <img src={Back} className="sm:w-[100%] w-20 cursor-pointer" alt="" /> */}
         </div>
       </div>

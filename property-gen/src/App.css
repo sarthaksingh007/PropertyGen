@@ -20,11 +20,7 @@ body {
 }
 
 .gradient {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 99, 132, 1) 0%,
-    rgba(255, 159, 180, 1) 100%
-  );
+  background: linear-gradient(135deg, #ff4d94, #ffa2f5);
 }
 
 .takelook {
