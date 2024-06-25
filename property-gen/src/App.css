@@ -4,6 +4,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: "Inter", sans-serif;
 }
 /* .hero {
   background-image: url(./assets/back1.png);

@@ -10,7 +10,7 @@ const Hero2 = () => {
         <div className="ml-[24px]">
           <div className="flex flex-row justify-evenly items-center overflow-x-auto sm:overflow-x-hidden w-full">
             {[
-              { id: "#01", text: "2BHK apartments with Dubai" },
+              { id: "#01", text: "2BHK apartments in Dubai" },
               { id: "#02", text: "Office Space with high returns" },
               { id: "#03", text: "Residential or Commercial?" },
             ].map((item, index) => (
