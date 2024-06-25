@@ -3,6 +3,9 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import Rating from "@mui/material/Rating";
 import { RiLoginBoxFill } from "react-icons/ri";
+import Block from "./../assets/block.png";
+import Block1 from "./../assets/block1.png";
+import Block2 from "./../assets/block2.png";
 
 const items = [
   {
@@ -11,6 +14,7 @@ const items = [
     title: "M3M Paragon",
     spaces: ["Retail Space", "Office Space"],
     rating: 4,
+    Imaging: Block,
   },
   {
     location: "Gurgaon, Sector 24",
@@ -18,6 +22,7 @@ const items = [
     title: "M3M Paragon",
     spaces: ["Retail Space", "Office Space"],
     rating: 4,
+    Imaging: Block1,
   },
   {
     location: "Gurgaon, Sector 24",
@@ -25,6 +30,7 @@ const items = [
     title: "M3M Paragon",
     spaces: ["Retail Space", "Office Space"],
     rating: 4,
+    Imaging: Block2,
   },
 ];
 
@@ -41,7 +47,7 @@ const Hero3 = () => {
         className="flex sm:flex-row flex-col justify-between sm:p-2 p-2 sm:w-4/5 w-11/12 mx-auto my-16 rounded-2xl  items-center bg-opacity-85 bg-[#2b292959]"
         style={shadowStyle}
       >
-        {items.map((item, index) => (
+        {/* {items.map((item, index) => (
           <div
             key={index}
             className={`p-3 flex flex-col sm:w-[28%] w-full justify-between sm:h-96 h-58  sm:m-2 sm:my-4 my-2 rounded-2xl ${
@@ -84,8 +90,12 @@ const Hero3 = () => {
               <RiLoginBoxFill />
               Take a look
             </button>
+            
           </div>
-        ))}
+        ))} */}
+        <img src={Block} alt="" />
+        <img src={Block1} alt="" />
+        <img src={Block2} alt="" />
       </div>
     </div>
   );
