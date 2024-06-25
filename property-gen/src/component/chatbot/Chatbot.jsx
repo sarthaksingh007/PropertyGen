@@ -258,7 +258,7 @@ function Chatbot() {
       className={
         showChatbot
           ? "dm mx-auto sm:w-full w-full bg-[#FFFFFF]  bg-opacity-100 rounded-lg border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]"
-          : "dm mx-auto sm:w-2/4 w-11/12   bg-opacity-100 mb-16 rounded-full border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]"
+          : "dm mx-auto sm:w-2/4 w-11/12   bg-opacity-100 mb-4 rounded-full border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]"
       }
     >
       <div

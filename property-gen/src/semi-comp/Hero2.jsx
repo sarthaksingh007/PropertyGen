@@ -3,7 +3,7 @@
 const Hero2 = () => {
   return (
     <>
-      <div className="mt-10">
+      <div className="mt-6">
         <p className="text-gray-300 my-3 sm:text-xl text-lg w-11/12 ml-auto">
           Trending Prompts
         </p>
