@@ -11,8 +11,9 @@ const Hero2 = () => {
           <div className="flex flex-row justify-evenly items-center overflow-x-auto sm:overflow-x-hidden w-full">
             {[
               { id: "#01", text: "2BHK apartments in Dubai" },
-              { id: "#02", text: "Office Space with high returns" },
-              { id: "#03", text: "Residential or Commercial?" },
+              { id: "#02", text: "Office Spaces in London" },
+              { id: "#03", text: "Rent or sell my house?" },
+              { id: "#04", text: "Residential or Commercial?" },
             ].map((item, index) => (
               <div
                 key={index}
@@ -21,7 +22,7 @@ const Hero2 = () => {
                 <p className="gradient text-white sm:p-2 p-3 sm:text-lg text-base font-semibold rounded-full">
                   {item.id}
                 </p>
-                <p className="text-black p-2 sm:text-lg text-sm font-semibold">
+                <p className="text-black p-2 sm:text-lg text-sm font-lightbold">
                   {item.text}
                 </p>
               </div>

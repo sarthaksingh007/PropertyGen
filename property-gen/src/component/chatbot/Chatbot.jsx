@@ -193,11 +193,11 @@ function Chatbot() {
   const [placeholder, setPlaceholder] = useState("");
   const questions = useMemo(
     () => [
-      "Trending projects in Noida?",
-      "Best location for capital appreciation?",
-      "Average rental for Office in Delhi?",
-      "Is Noida a good location for investing?",
-      "Top retail projects in Gurgaon?",
+      "Should I rent or sell my house?",
+      "How to find the best deals?",
+      "Which neighborhoods are up-and-coming?",
+      "What are current real estate trends?",
+      "What is my property worth now?",
     ],
     []
   );
@@ -394,10 +394,7 @@ function Chatbot() {
             : "flex flex-row sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]   "
         }
       >
-        <div
-          
-          className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2"
-        >
+        <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
           <input
             type="text"
             value={inputText}

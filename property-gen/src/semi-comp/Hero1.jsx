@@ -16,7 +16,7 @@ const Hero1 = () => {
       <p className="text-white sm:w-2/5 w-10/12 sm:text-xl text-sm sm:p-2 p-1 my-3 text-center mx-auto">
         That’s all it takes to find your perfect property with{" "}
         <span className="gotpara ">
-          <b>Property Genius</b> - World’s first personalized virtual property
+          <b>Propit Ai</b> - World’s first personalized virtual property
           consultant!
         </span>
       </p>
