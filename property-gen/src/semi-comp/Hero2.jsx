@@ -7,7 +7,7 @@ const Hero2 = () => {
         <p className="text-gray-300 my-3 sm:text-xl text-lg w-11/12 ml-auto">
           Trending prompt
         </p>
-        <div className="mx-[24px]">
+        <div className="ml-[24px]">
           <div className="flex flex-row justify-evenly items-center overflow-x-auto sm:overflow-x-hidden w-full">
             {[
               { id: "#01", text: "2BHK apartments with returns" },

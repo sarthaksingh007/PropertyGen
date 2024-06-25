@@ -20,7 +20,11 @@ body {
 }
 
 .gradient {
-  background: linear-gradient(to bottom, #ff0056 0%, #a21ded 50%, #a21ded 85%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 99, 132, 1) 0%,
+    rgba(255, 159, 180, 1) 100%
+  );
 }
 
 .takelook {
@@ -71,7 +75,7 @@ body {
   body {
     background-color: #00091f;
     background-image: url(./assets/smallbg.png);
-    background-position:top;
+    background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
   }
