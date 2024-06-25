@@ -23,6 +23,9 @@ body {
 .gradient {
   background: linear-gradient(135deg, #ff4d94, #ffa2f5);
 }
+.gradient1 {
+  background: linear-gradient(135deg, #ea0c65, #f25ae3);
+}
 
 .takelook {
   background-image: url(./assets/look1.webp);
@@ -49,7 +52,6 @@ body {
 /* Define the gradient */
 .custom-gradient2 {
   background: linear-gradient(135deg, rgb(30, 30, 72), rgb(57, 30, 114));
-
 }
 .gradient-border {
   position: relative;
