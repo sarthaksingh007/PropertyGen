@@ -7,7 +7,7 @@ import { RiGroupLine } from "react-icons/ri";
 
 import { FaArrowRight } from "react-icons/fa6";
 import { HiMiniArrowsPointingIn } from "react-icons/hi2";
-import Copilot from "./../../assets/propit3.png";
+import Copilot from "./../../assets/propit4.png";
 import Copilot1 from "./../../assets/propit2.png";
 import Profile from "./../../assets/profile.jpeg";
 import AnimatedText from "./../chatbot/AnimatedText.jsx";
@@ -279,7 +279,7 @@ function Chatbot() {
             src={Copilot}
             loading="lazy"
             alt=""
-            className="sm:w-[8%] w-[35%] mx-2 p-2"
+            className="sm:w-[8%] w-[30%] mx-2 p-2"
             style={{ alignSelf: "flex-start" }}
           />
 
@@ -291,10 +291,7 @@ function Chatbot() {
                   : "flex flex-row justify-evenly items-center w-2/4 "
               }
             >
-              <IoPersonCircleOutline
-                className="mx-1 text-4xl text-[#121C4F] sm:text-2xl cursor-pointer"
-                
-              />
+              <IoPersonCircleOutline className="mx-1 text-4xl text-[#121C4F] sm:text-2xl cursor-pointer" />
               {/* <TfiBrushAlt className="mx-1 text-2xl text-[#598bf8]" /> */}
               <TbMenu className="mx-1 text-4xl text-[#121C4F] sm:text-2xl" />
               {/* <MdOutlineMenu className="mx-1 text-2xl text-[#598bf8]" /> */}
@@ -424,17 +421,21 @@ function Chatbot() {
         </div>
       </form>
       {showChatbot && (
-        <div className="gradient1 flex flex-row justify-between px-4 ">
+        <div className="gradient1 flex flex-row justify-between px-4  mt-1">
           <div className="flex flex-col justify-center items-center text-white text-lg">
-            <IoHome onClick={() => {
-                  setShowChatbot(false);
-                }} className="p-1 pt-2 text-4xl" />
+            <IoHome
+              onClick={() => {
+                setShowChatbot(false);
+              }}
+              className="p-1 pt-2 text-4xl"
+            />
             <p>Home</p>
           </div>
-          <div className="flex flex-col justify-center items-center text-white text-lg">
+          <div className="flex flex-col justify-center items-center text-white text-lg border-t-white border-t-4">
             <IoSearch className="p-1 pt-2 text-4xl" />
             <p>Search</p>
           </div>
+
           <div className="flex flex-col justify-center items-center text-white text-lg">
             <FaHistory className="p-1 pt-2 text-4xl" />
             <p>History</p>
