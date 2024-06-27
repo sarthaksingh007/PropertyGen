@@ -303,7 +303,7 @@ function Chatbot() {
       <div
         className={
           showChatbot
-            ? "messages-container sm:h-[73vh] h-[73vh] mx-auto sm:w-full w-full rounded-lg my-2 overflow-auto"
+            ? "messages-container sm:h-[70vh] h-[70vh] mx-auto sm:w-full w-full rounded-lg my-2 overflow-auto"
             : "messages-container sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-lg my-2 overflow-auto hidden"
         }
       >
