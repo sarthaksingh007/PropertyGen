@@ -399,7 +399,7 @@ function Chatbot() {
             type="text"
             value={inputText}
             placeholder={showplaceholder ? placeholder : "ask me anything..."}
-            className="focus:outline-none w-full rounded-full text-lg sm:px-3 p-[0.35rem]"
+            className="focus:outline-none w-full rounded-full text-md sm:px-3 p-[0.35rem]"
             onChange={handleInputChange}
             onClick={handleshow}
             required
