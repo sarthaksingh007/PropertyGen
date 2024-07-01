@@ -36,11 +36,11 @@ const Hero2 = () => {
         </div>
       </div> */}
       <div className="mt-6">
-        <p className="text-gray-300 my-3 sm:text-xl text-lg w-[95%] ml-auto">
+        <p className="text-white my-3 sm:text-xl text-lg w-[93%] ml-auto">
           Our features
         </p>
         <div className="">
-          <div className="flex flex-row justify-evenly items-center overflow-x-auto  w-full">
+          <div className="flex pl-[1.3rem] flex-row justify-evenly items-center overflow-x-auto  w-full">
             {[
               { imgs: m1 },
               { imgs: m2 },
@@ -60,7 +60,7 @@ const Hero2 = () => {
               //     {item.text}
               //   </p>
               // </div>
-              <img key={index} className="sm:w-1/5 w-[35%] p-1 m-1" src={item.imgs} alt="" />
+              <img key={index} className="sm:w-1/5 w-[40%] p-1 m-1" src={item.imgs} alt="" />
             ))}
           </div>
         </div>
