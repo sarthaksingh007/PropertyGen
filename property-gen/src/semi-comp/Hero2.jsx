@@ -60,7 +60,7 @@ const Hero2 = () => {
               //     {item.text}
               //   </p>
               // </div>
-              <img key={index} className="sm:w-1/5 w-[50%] p-2 m-2" src={item.imgs} alt="" />
+              <img key={index} className="sm:w-1/5 w-[35%] p-1 m-1" src={item.imgs} alt="" />
             ))}
           </div>
         </div>
