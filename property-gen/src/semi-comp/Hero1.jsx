@@ -42,7 +42,7 @@ const Hero1 = () => {
           <img src={search} alt="" className="sm:w-10 w-12" />
         </div>
       </div> */}
-      <div className="mb-20">
+      <div className="my-16">
         <Chatbot />
       </div>
     </div>
