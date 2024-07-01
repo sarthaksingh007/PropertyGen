@@ -13,6 +13,8 @@ import { TbMenu } from "react-icons/tb";
 import search from "./../../assets/search.png";
 import { TbDots } from "react-icons/tb";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { TiMicrophone } from "react-icons/ti";
+import { GrCopy } from "react-icons/gr";
 // import PropertyList from "../../../component/PropertyList.jsx";
 
 function Chatbot() {
@@ -291,20 +293,20 @@ function Chatbot() {
       <div
         className={
           showChatbot
-            ? "messages-container sm:h-[70vh] h-[70vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
+            ? "messages-container sm:h-[80vh] h-[75vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
             : "messages-container sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
         }
       >
         <div className="chatbot-message m-1 p-1">
           <div className="flex flex-col items-center my-4">
-            <h1 className="font-semibold text-2xl text-gray-600">
+            <h1 className="font-bold text-3xl text-blue-800">
               Welcome to the{" "}
             </h1>
-            <h1 className="font-semibold text-2xl text-gray-600">Propit AI</h1>
-            <p className="w-[98%] text-center text-gray-600 mx-auto ">
+            <h1 className="font-bold text-3xl text-blue-800">Propit AI</h1>
+            <p className="w-[98%] text-center text-sm text-gray-600 mx-auto ">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima,
               ex reprehenderit? Ducimus quod cum, laborum perferendis reiciendis
-              nesciunt iste placeat fugiat omnis ad 
+              nesciunt iste placeat fugiat omnis ad
             </p>
           </div>
           <div className="flex flex-col justify-center items-start">
@@ -411,23 +413,31 @@ function Chatbot() {
             : "flex flex-row sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]   "
         }
       >
-        <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
-          <input
-            type="text"
-            value={inputText}
-            placeholder={showplaceholder ? placeholder : "ask me anything..."}
-            className="focus:outline-none w-full rounded-full text-md sm:px-3 p-[0.35rem]"
-            onChange={handleInputChange}
-            onClick={handleshow}
-            required
-          />
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="flex justify-center items-center  text-black text-md px-2 rounded-full py-2 relative h-10 sm:text-[10.5px]"
-          >
-            <img src={search} alt="" className="sm:w-10 w-12" />
-          </button>
+        <div className="flex flex-row justify-between items-center bg-white rounded-xl">
+          <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
+            <GrCopy className="text-xl"/>
+          </div>
+          <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
+            <TiMicrophone className="text-xl"/>
+          </div>
+          <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
+            <input
+              type="text"
+              value={inputText}
+              placeholder={showplaceholder ? placeholder : "ask me anything..."}
+              className="focus:outline-none w-full rounded-full text-md sm:px-3 p-[0.35rem]"
+              onChange={handleInputChange}
+              onClick={handleshow}
+              required
+            />
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="flex justify-center items-center  text-black text-md px-2 rounded-full py-2 relative h-10 sm:text-[10.5px]"
+            >
+              <img src={search} alt="" className="sm:w-10 w-12" />
+            </button>
+          </div>
         </div>
       </form>
     </div>
