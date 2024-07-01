@@ -46,7 +46,7 @@ const Header = () => {
           ) : (
             <img
               src={Back}
-              className="sm:w-[100%] sm:mt-0 mt-1  w-[2.4rem] cursor-pointer"
+              className="sm:w-[98%] sm:mt-0 mt-1  w-[2.1rem] cursor-pointer"
               alt=""
             />
           )}
@@ -54,7 +54,7 @@ const Header = () => {
         <div className="sm:flex hidden flex-row justify-end items-center sm:w-min">
           <img
             src={Back}
-            className="sm:w-[100%] w-20 mr-10 cursor-pointer"
+            className="sm:w-[98%] w-19 mr-10 cursor-pointer"
             alt=""
           />
           {/* <img src={Back} className="sm:w-[100%] w-20 cursor-pointer" alt="" /> */}
