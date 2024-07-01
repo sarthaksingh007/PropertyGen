@@ -299,10 +299,10 @@ function Chatbot() {
       >
         <div className="chatbot-message m-1 p-1">
           <div className="flex flex-col items-center my-4">
-            <h1 className="font-bold text-3xl text-blue-800">
+            <h1 className="font-extrabold text-3xl text-blue-900">
               Welcome to the{" "}
             </h1>
-            <h1 className="font-bold text-3xl text-blue-800">Propit AI</h1>
+            <h1 className="font-extrabold text-3xl text-blue-900 mb-3">Propit AI</h1>
             <p className="w-[98%] text-center text-sm text-gray-600 mx-auto ">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima,
               ex reprehenderit? Ducimus quod cum, laborum perferendis reiciendis
@@ -413,13 +413,24 @@ function Chatbot() {
             : "flex flex-row sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]   "
         }
       >
-        <div className="flex flex-row justify-between items-center bg-white rounded-xl">
-          <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
-            <GrCopy className="text-xl"/>
-          </div>
-          <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
-            <TiMicrophone className="text-xl"/>
-          </div>
+        <div
+          className={
+            showChatbot
+              ? "flex flex-row justify-between items-center bg-white rounded-xl"
+              : "flex flex-row justify-between items-center "
+          }
+        >
+          {showChatbot && (
+            <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
+              <GrCopy className="text-xl" />
+            </div>
+          )}
+          {showChatbot && (
+            <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
+              <TiMicrophone className="text-xl" />
+            </div>
+          )}
+
           <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
             <input
               type="text"
