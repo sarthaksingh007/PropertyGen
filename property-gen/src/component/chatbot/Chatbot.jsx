@@ -270,26 +270,43 @@ function Chatbot() {
         }
       >
         <div className="flex flex-row justify-between items-center">
-          <FaArrowLeftLong onClick={() => {
-                setShowChatbot(false);
-              }} className="text-white "/>
+          <FaArrowLeftLong
+            onClick={() => {
+              setShowChatbot(false);
+            }}
+            className="text-white  text-xl"
+          />
 
           <div className="flex items-center flex-col">
-            <h1 className="text-white text-xl">Propit AI</h1>
-            <p className="text-white text-md">Online</p>
+            <h1 className="text-white text-lg">Propit AI</h1>
+            <div className="flex flex-row justify-center items-center">
+              <div className="bg-green-600 rounded-full p-1 m-1"></div>
+              <p className="text-white text-sm">Online</p>
+            </div>
           </div>
-          <TbDots className="text-white "/>
+          <TbDots className="text-white text-2xl" />
         </div>
       </div>
 
       <div
         className={
           showChatbot
-            ? "messages-container sm:h-[70vh] h-[70vh] mx-auto sm:w-full w-full rounded-lg my-2 overflow-auto  bg-white"
-            : "messages-container sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-lg my-2 overflow-auto hidden bg-white"
+            ? "messages-container sm:h-[70vh] h-[70vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
+            : "messages-container sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
         }
       >
         <div className="chatbot-message m-1 p-1">
+          <div className="flex flex-col items-center my-4">
+            <h1 className="font-semibold text-2xl text-gray-600">
+              Welcome to the{" "}
+            </h1>
+            <h1 className="font-semibold text-2xl text-gray-600">Propit AI</h1>
+            <p className="w-[98%] text-center text-gray-600 mx-auto ">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima,
+              ex reprehenderit? Ducimus quod cum, laborum perferendis reiciendis
+              nesciunt iste placeat fugiat omnis ad 
+            </p>
+          </div>
           <div className="flex flex-col justify-center items-start">
             <div className="flex flex-row justify-start items-center">
               <div className="flex flex-row justify-between items-center my-1">
