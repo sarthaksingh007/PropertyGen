@@ -3,10 +3,6 @@ import { animate } from "framer-motion";
 import axios from "axios";
 import "./chatbot.css";
 
-import { RiGroupLine } from "react-icons/ri";
-
-import { FaArrowRight } from "react-icons/fa6";
-import { HiMiniArrowsPointingIn } from "react-icons/hi2";
 import Copilot from "./../../assets/propit4.png";
 import Copilot1 from "./../../assets/propit2.png";
 import Profile from "./../../assets/profile.jpeg";
@@ -15,9 +11,8 @@ import { ChatbotContext } from "../../../src/chatContext.jsx";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { TbMenu } from "react-icons/tb";
 import search from "./../../assets/search.png";
-import { IoHome } from "react-icons/io5";
-import { IoSearch } from "react-icons/io5";
-import { FaHistory } from "react-icons/fa";
+import { TbDots } from "react-icons/tb";
+import { FaArrowLeftLong } from "react-icons/fa6";
 // import PropertyList from "../../../component/PropertyList.jsx";
 
 function Chatbot() {
@@ -263,53 +258,40 @@ function Chatbot() {
     <div
       className={
         showChatbot
-          ? "dm mx-auto sm:w-full w-full bg-[#FFFFFF]  bg-opacity-100 rounded-lg border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]"
+          ? "dm mx-auto sm:w-full w-full bg-[#685ABF]  bg-opacity-100 rounded-lg border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]"
           : "dm mx-auto sm:w-2/4     "
       }
     >
       <div
         className={
           showChatbot
-            ? "bg-[#f0f6fb] rounded-lg sticky top-0 w-full  z-20"
-            : "bg-[#f0f6fb] rounded-lg z-20 hidden"
+            ? "bg-[#685ABF] p-3  rounded-t-[2.5rem] sticky top-0 w-full  z-20"
+            : "bg-[#685ABF] rounded-lg z-20 hidden"
         }
       >
         <div className="flex flex-row justify-between items-center">
-          <img
-            src={Copilot}
-            loading="lazy"
-            alt=""
-            className="sm:w-[8%] w-[30%] mx-2 p-2"
-            style={{ alignSelf: "flex-start" }}
-          />
+          <FaArrowLeftLong onClick={() => {
+                setShowChatbot(false);
+              }} className="text-white "/>
 
-          {showChatbot && (
-            <div
-              className={
-                showChatbot
-                  ? "flex flex-row justify-end items-center w-2/4 "
-                  : "flex flex-row justify-evenly items-center w-2/4 "
-              }
-            >
-              <IoPersonCircleOutline className="mx-1 text-4xl text-[#121C4F] sm:text-2xl cursor-pointer" />
-              {/* <TfiBrushAlt className="mx-1 text-2xl text-[#598bf8]" /> */}
-              <TbMenu className="mx-1 text-4xl text-[#121C4F] sm:text-2xl" />
-              {/* <MdOutlineMenu className="mx-1 text-2xl text-[#598bf8]" /> */}
-            </div>
-          )}
+          <div className="flex items-center flex-col">
+            <h1 className="text-white text-xl">Propit AI</h1>
+            <p className="text-white text-md">Online</p>
+          </div>
+          <TbDots className="text-white "/>
         </div>
       </div>
 
       <div
         className={
           showChatbot
-            ? "messages-container sm:h-[70vh] h-[70vh] mx-auto sm:w-full w-full rounded-lg my-2 overflow-auto"
-            : "messages-container sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-lg my-2 overflow-auto hidden"
+            ? "messages-container sm:h-[70vh] h-[70vh] mx-auto sm:w-full w-full rounded-lg my-2 overflow-auto  bg-white"
+            : "messages-container sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-lg my-2 overflow-auto hidden bg-white"
         }
       >
         <div className="chatbot-message m-1 p-1">
           <div className="flex flex-col justify-center items-start">
-            <div className="flex flex-col justify-start items-start">
+            <div className="flex flex-row justify-start items-center">
               <div className="flex flex-row justify-between items-center my-1">
                 <img
                   src={Copilot1}
@@ -317,7 +299,6 @@ function Chatbot() {
                   alt="Chatbot Profile"
                   className="mr-1 py-1 w-6"
                 />
-                <p className="text-black font-bold text-lg">Propit-Ai</p>
               </div>
               <p className="">
                 {/* <span className="flex flex-col justify-start items-start"> */}
@@ -341,14 +322,13 @@ function Chatbot() {
             {/* Render user message */}
             {msg.isUser ? (
               <div className="flex flex-col justify-start items-end">
-                <div className="flex flex-col-reverse justify-end items-end sm:w-3/4">
+                <div className="flex flex-row justify-end items-end sm:w-3/4">
                   <span className="flex flex-col justify-start items-center">
                     <div className="w-full mb-2 p-1 rounded-md bg-[#e1ecf4]">
                       {msg.text}
                     </div>
                   </span>
                   <div className="flex flex-row justify-between items-center my-1">
-                    <p className="text-black font-bold text-lg">You:</p>
                     <img
                       src={Profile}
                       loading="lazy"
@@ -361,16 +341,14 @@ function Chatbot() {
             ) : (
               // Render chatbot message
               <div className="flex flex-col justify-start items-start">
-                <div className="flex flex-col justify-start items-start">
-                  <div className="flex flex-row justify-between items-center my-1">
-                    <img
-                      src={Copilot1}
-                      loading="lazy"
-                      alt="Chatbot Profile"
-                      className="mr-1 py-1 w-6"
-                    />
-                    <p className="text-black font-bold text-lg">Propit-Ai</p>
-                  </div>
+                <div className="flex flex-row justify-start items-start">
+                  <img
+                    src={Copilot1}
+                    loading="lazy"
+                    alt="Chatbot Profile"
+                    className="mr-1 w-6"
+                  />
+
                   <span className="flex flex-col justify-start items-start">
                     <div className="sm:w-[100%] w-full mb-2 flex flex-col justify-start items-start p-1 bg-[#efefef]  rounded-md">
                       <AnimatedText message={msg.text} />
@@ -384,6 +362,28 @@ function Chatbot() {
 
         {/* </ScrollContainer> */}
       </div>
+      {/* {showChatbot && (
+        <div className="gradient1 flex flex-row justify-between px-4  mt-1">
+          <div className="flex flex-col justify-center items-center text-white text-lg">
+            <IoHome
+              onClick={() => {
+                setShowChatbot(false);
+              }}
+              className="p-1 pt-2 text-4xl"
+            />
+            <p>Home</p>
+          </div>
+          <div className="flex flex-col justify-center items-center text-white text-lg border-t-white border-t-4">
+            <IoSearch className="p-1 pt-2 text-4xl" />
+            <p>Search</p>
+          </div>
+
+          <div className="flex flex-col justify-center items-center text-white text-lg">
+            <FaHistory className="p-1 pt-2 text-4xl" />
+            <p>History</p>
+          </div>
+        </div>
+      )} */}
 
       <form
         onSubmit={handleSubmit}
@@ -413,28 +413,6 @@ function Chatbot() {
           </button>
         </div>
       </form>
-      {showChatbot && (
-        <div className="gradient1 flex flex-row justify-between px-4  mt-1">
-          <div className="flex flex-col justify-center items-center text-white text-lg">
-            <IoHome
-              onClick={() => {
-                setShowChatbot(false);
-              }}
-              className="p-1 pt-2 text-4xl"
-            />
-            <p>Home</p>
-          </div>
-          <div className="flex flex-col justify-center items-center text-white text-lg border-t-white border-t-4">
-            <IoSearch className="p-1 pt-2 text-4xl" />
-            <p>Search</p>
-          </div>
-
-          <div className="flex flex-col justify-center items-center text-white text-lg">
-            <FaHistory className="p-1 pt-2 text-4xl" />
-            <p>History</p>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
