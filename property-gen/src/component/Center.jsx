@@ -72,7 +72,7 @@ const Center = () => {
                 alt=""
                 className="absolute sm:top-[-40px] sm:left-4 top-[-20px] left-2 sm:w-auto w-10"
               />
-              <h1 className="text-white text-left sm:text-2xl text-xl px-2 sm:px-4 font-bold mt-10">
+              <h1 className="text-white text-left sm:text-2xl text-xl px-2 sm:px-4 font-bold sm:mt-10 mt-4 ">
                 {feature.title}
               </h1>
               <p className="text-white text-left sm:text-lg text-sm p-2 sm:p-4">

@@ -44,7 +44,7 @@ const Hero3 = () => {
   return (
     <div>
       <div
-        className="flex sm:flex-row flex-col justify-between sm:p-2 p-2 sm:w-4/5 w-11/12 mx-auto my-8 rounded-2xl  items-center bg-opacity-85 bg-[#2b292959]"
+        className="flex sm:flex-row flex-col justify-between sm:p-2 p-2 sm:w-4/5 w-[83%] mx-auto my-8 rounded-2xl  items-center bg-opacity-85 bg-[#2b292959]"
         style={shadowStyle}
       >
         {/* {items.map((item, index) => (
@@ -93,9 +93,9 @@ const Hero3 = () => {
             
           </div>
         ))} */}
-        <img src={Block} className="sm:w-1/3" alt="" />
-        <img src={Block1} className="sm:w-1/3" alt="" />
-        <img src={Block2} className="sm:w-1/3" alt="" />
+        <img src={Block} className="sm:w-1/3 sm:p-1 p-2" alt="" />
+        <img src={Block1} className="sm:w-1/3 sm:p-1 p-2" alt="" />
+        <img src={Block2} className="sm:w-1/3 sm:p-1 p-2" alt="" />
       </div>
     </div>
   );
