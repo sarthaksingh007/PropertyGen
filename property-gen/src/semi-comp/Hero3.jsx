@@ -3,9 +3,9 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import Rating from "@mui/material/Rating";
 import { RiLoginBoxFill } from "react-icons/ri";
-import Block from "./../assets/block.png";
-import Block1 from "./../assets/block1.png";
-import Block2 from "./../assets/block2.png";
+import Block from "./../assets/P1.png";
+import Block1 from "./../assets/P2.png";
+import Block2 from "./../assets/P3.png";
 
 const items = [
   {
@@ -93,9 +93,9 @@ const Hero3 = () => {
             
           </div>
         ))} */}
-        <img src={Block2} alt="" />
-        <img src={Block1} alt="" />
-        <img src={Block} alt="" />
+        <img src={Block2} className="sm:w-1/3" alt="" />
+        <img src={Block1} className="sm:w-1/3" alt="" />
+        <img src={Block} className="sm:w-1/3" alt="" />
       </div>
     </div>
   );
