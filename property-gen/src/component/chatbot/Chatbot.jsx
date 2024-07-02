@@ -15,6 +15,7 @@ import { TbDots } from "react-icons/tb";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { TiMicrophone } from "react-icons/ti";
 import { GrCopy } from "react-icons/gr";
+import { BsFillSendFill } from "react-icons/bs";
 // import PropertyList from "../../../component/PropertyList.jsx";
 
 function Chatbot() {
@@ -260,7 +261,7 @@ function Chatbot() {
     <div
       className={
         showChatbot
-          ? "dm mx-auto sm:w-full w-full bg-[#685ABF]  bg-opacity-100 rounded-lg border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]"
+          ? "dm mx-auto sm:w-full w-full bg-[#685ABF]  bg-opacity-100 rounded-lg border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] pb-4"
           : "dm mx-auto sm:w-2/4     "
       }
     >
@@ -293,11 +294,11 @@ function Chatbot() {
       <div
         className={
           showChatbot
-            ? "messages-container rounded-t-[2.5rem] sm:h-[80vh] h-[90vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
-            : "messages-container rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
+            ? "messages-container  rounded-t-[2.5rem] sm:h-[80vh] h-[88vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
+            : "messages-container  rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
         }
       >
-        <div className="h-[50rem]">
+        <div className="h-auto pb-[3rem] ">
           <div className="chatbot-message m-1 p-1">
             <div className="flex flex-col items-center my-4">
               <h1 className="font-extrabold text-3xl text-blue-900">
@@ -346,7 +347,7 @@ function Chatbot() {
                 <div className="flex flex-col justify-start items-end">
                   <div className="flex flex-row justify-end items-end sm:w-3/4">
                     <span className="flex flex-col justify-start items-center">
-                      <div className="w-full mb-2 p-1 rounded-md bg-[#e1ecf4]">
+                      <div className="w-full mb-2 p-1 text-white rounded-md bg-[#685ABF]">
                         {msg.text}
                       </div>
                     </span>
@@ -385,55 +386,61 @@ function Chatbot() {
 
         {/* </ScrollContainer> */}
         {showChatbot && (
-          <form
-            onSubmit={handleSubmit}
-            style={showChatbot ? {} : shadowStyle}
-            className={
-              showChatbot
-                ? "sticky bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  "
-                : "flex flex-row sticky bottom-0 sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]   "
-            }
-          >
-            <div
+          <div className="absolute bottom-0 w-full ">
+            <form
+              onSubmit={handleSubmit}
+              style={showChatbot ? {} : shadowStyle}
               className={
                 showChatbot
-                  ? "flex flex-row justify-between items-center bg-white rounded-xl"
-                  : "flex flex-row justify-between items-center "
+                  ? "sticky bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  "
+                  : "flex flex-row sticky bottom-0 sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]   "
               }
             >
-              {showChatbot && (
-                <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
-                  <GrCopy className="text-xl" />
-                </div>
-              )}
-              {showChatbot && (
-                <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
-                  <TiMicrophone className="text-xl" />
-                </div>
-              )}
+              <div
+                className={
+                  showChatbot
+                    ? "flex flex-row justify-between items-center bg-white rounded-xl"
+                    : "flex flex-row justify-between items-center "
+                }
+              >
+                {showChatbot && (
+                  <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
+                    <GrCopy className="text-3xl" />
+                  </div>
+                )}
+                {showChatbot && (
+                  <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
+                    <TiMicrophone className="text-3xl" />
+                  </div>
+                )}
 
-              <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
-                <input
-                  type="text"
-                  value={inputText}
-                  placeholder={
-                    showplaceholder ? placeholder : "ask me anything..."
-                  }
-                  className="focus:outline-none w-full rounded-full text-md sm:px-3 p-[0.35rem]"
-                  onChange={handleInputChange}
-                  onClick={handleshow}
-                  required
-                />
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="flex justify-center items-center  text-black text-md px-2 rounded-full py-2 relative h-10 sm:text-[10.5px]"
-                >
-                  <img src={search} alt="" className="sm:w-10 w-12" />
-                </button>
+                <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
+                  <input
+                    type="text"
+                    value={inputText}
+                    placeholder={
+                      showplaceholder ? placeholder : "ask me anything..."
+                    }
+                    className="focus:outline-none w-full rounded-full text-md sm:px-3 p-[0.35rem]"
+                    onChange={handleInputChange}
+                    onClick={handleshow}
+                    required
+                  />
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="flex justify-center items-center gradient  text-black text-md px-1 rounded-full  relative h-10 sm:text-[10.5px]"
+                  >
+                    {isLoading ? (
+                      <div className="loader"></div>
+                    ) : (
+                      <BsFillSendFill className="text-4xl p-2 text-white" />
+                    )}
+                  </button>
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         )}
       </div>
       {!showChatbot && (
