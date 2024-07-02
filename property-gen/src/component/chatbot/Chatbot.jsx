@@ -325,7 +325,7 @@ function Chatbot() {
                 </div>
                 <p className="">
                   {/* <span className="flex flex-col justify-start items-start"> */}
-                  <div className="w-full flex flex-col justify-start items-center p-1 bg-[#efefef] rounded-md">
+                  <div className="w-full flex flex-col justify-start items-center p-1 bg-[#E2E0EF] rounded-md">
                     {defaultChatbotMessage.text}
                   </div>
                   {/* </span> */}
@@ -450,7 +450,7 @@ function Chatbot() {
           className={
             showChatbot
               ? "sticky bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  "
-              : "flex flex-row sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]   "
+              : "flex flex-row sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[75%]   "
           }
         >
           <div
