@@ -294,8 +294,8 @@ function Chatbot() {
       <div
         className={
           showChatbot
-            ? "messages-container  rounded-t-[2.5rem] sm:h-[80vh] h-[88vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
-            : "messages-container  rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
+            ? "messages-container z-10  rounded-t-[2.5rem] sm:h-[80vh] h-[88vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
+            : "messages-container z-10  rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
         }
       >
         <div className="h-auto pb-[3rem] ">
@@ -373,7 +373,7 @@ function Chatbot() {
                     />
 
                     <span className="flex flex-col justify-start items-start">
-                      <div className="sm:w-[100%] w-full mb-2 flex flex-col justify-start items-start p-1 bg-[#efefef]  rounded-md">
+                      <div className="sm:w-[100%] w-full mb-2 flex flex-col justify-start items-start p-1 bg-[#E2E0EF]  rounded-md">
                         <AnimatedText message={msg.text} />
                       </div>
                     </span>
@@ -450,7 +450,7 @@ function Chatbot() {
           className={
             showChatbot
               ? "sticky bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  "
-              : "flex flex-row sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[75%]   "
+              : "flex flex-row sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[70%]   "
           }
         >
           <div
