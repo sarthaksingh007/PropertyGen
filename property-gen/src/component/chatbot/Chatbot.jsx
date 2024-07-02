@@ -294,11 +294,11 @@ function Chatbot() {
       <div
         className={
           showChatbot
-            ? "messages-container z-10  rounded-t-[2.5rem] sm:h-[80vh] h-[88vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
-            : "messages-container z-10  rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
+            ? "messages-container  rounded-t-[2.5rem] sm:h-[80vh] h-[88vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
+            : "messages-container  rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
         }
       >
-        <div className="h-auto pb-[3rem] ">
+        <div className="h-auto ">
           <div className="chatbot-message m-1 p-1">
             <div className="flex flex-col items-center my-4">
               <h1 className="font-extrabold text-3xl text-blue-900">

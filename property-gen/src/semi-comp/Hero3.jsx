@@ -43,7 +43,7 @@ const Hero3 = () => {
 
   return (
     <div>
-      <p className="text-white my-3 sm:text-xl text-lg w-[93%] ml-auto mt-10">
+      <p className="text-white my-3 sm:text-xl text-lg w-[93%] ml-auto mt-5">
           Explore Listings
         </p>
       <div
