@@ -267,8 +267,8 @@ function Chatbot() {
       <div
         className={
           showChatbot
-            ? "bg-[#685ABF] p-3  rounded-t-[2.5rem] sticky top-0 w-full  z-20"
-            : "bg-[#685ABF] rounded-lg z-20 hidden"
+            ? "bg-[#685ABF] p-3  rounded-t-[2.5rem] sticky top-0 w-full pt-5  z-20"
+            : "bg-[#685ABF] rounded-lg z-20 hidden pt-5"
         }
       >
         <div className="flex flex-row justify-between items-center">
@@ -293,164 +293,200 @@ function Chatbot() {
       <div
         className={
           showChatbot
-            ? "messages-container sm:h-[80vh] h-[75vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
-            : "messages-container sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
+            ? "messages-container rounded-t-[2.5rem] sm:h-[80vh] h-[90vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
+            : "messages-container rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
         }
       >
-        <div className="chatbot-message m-1 p-1">
-          <div className="flex flex-col items-center my-4">
-            <h1 className="font-extrabold text-3xl text-blue-900">
-              Welcome to the{" "}
-            </h1>
-            <h1 className="font-extrabold text-3xl text-blue-900 mb-3">Propit AI</h1>
-            <p className="w-[98%] text-center text-sm text-gray-600 mx-auto ">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima,
-              ex reprehenderit? Ducimus quod cum, laborum perferendis reiciendis
-              nesciunt iste placeat fugiat omnis ad
-            </p>
-          </div>
-          <div className="flex flex-col justify-center items-start">
-            <div className="flex flex-row justify-start items-center">
-              <div className="flex flex-row justify-between items-center my-1">
-                <img
-                  src={Copilot1}
-                  loading="lazy"
-                  alt="Chatbot Profile"
-                  className="mr-1 py-1 w-6"
-                />
-              </div>
-              <p className="">
-                {/* <span className="flex flex-col justify-start items-start"> */}
-                <div className="w-full flex flex-col justify-start items-center p-1 bg-[#efefef] rounded-md">
-                  {defaultChatbotMessage.text}
-                </div>
-                {/* </span> */}
+        <div className="h-[50rem]">
+          <div className="chatbot-message m-1 p-1">
+            <div className="flex flex-col items-center my-4">
+              <h1 className="font-extrabold text-3xl text-blue-900">
+                Welcome to the{" "}
+              </h1>
+              <h1 className="font-extrabold text-3xl text-blue-900 mb-3">
+                Propit AI
+              </h1>
+              <p className="w-[98%] text-center text-sm text-gray-600 mx-auto ">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Minima, ex reprehenderit? Ducimus quod cum, laborum perferendis
+                reiciendis nesciunt iste placeat fugiat omnis ad
               </p>
             </div>
-          </div>
-        </div>
-        {messages.map((msg, index) => (
-          <div
-            key={index}
-            className={
-              msg.isUser
-                ? "user-message m-1 p-1 text-right"
-                : "chatbot-message m-1 p-1"
-            }
-          >
-            {/* Render user message */}
-            {msg.isUser ? (
-              <div className="flex flex-col justify-start items-end">
-                <div className="flex flex-row justify-end items-end sm:w-3/4">
-                  <span className="flex flex-col justify-start items-center">
-                    <div className="w-full mb-2 p-1 rounded-md bg-[#e1ecf4]">
-                      {msg.text}
-                    </div>
-                  </span>
-                  <div className="flex flex-row justify-between items-center my-1">
-                    <img
-                      src={Profile}
-                      loading="lazy"
-                      alt="Chatbot Profile"
-                      className="mr-1 p-1 w-8"
-                    />
-                  </div>
-                </div>
-              </div>
-            ) : (
-              // Render chatbot message
-              <div className="flex flex-col justify-start items-start">
-                <div className="flex flex-row justify-start items-start">
+            <div className="flex flex-col justify-center items-start">
+              <div className="flex flex-row justify-start items-center">
+                <div className="flex flex-row justify-between items-center my-1">
                   <img
                     src={Copilot1}
                     loading="lazy"
                     alt="Chatbot Profile"
-                    className="mr-1 w-6"
+                    className="mr-1 py-1 w-6"
                   />
-
-                  <span className="flex flex-col justify-start items-start">
-                    <div className="sm:w-[100%] w-full mb-2 flex flex-col justify-start items-start p-1 bg-[#efefef]  rounded-md">
-                      <AnimatedText message={msg.text} />
-                    </div>
-                  </span>
                 </div>
+                <p className="">
+                  {/* <span className="flex flex-col justify-start items-start"> */}
+                  <div className="w-full flex flex-col justify-start items-center p-1 bg-[#efefef] rounded-md">
+                    {defaultChatbotMessage.text}
+                  </div>
+                  {/* </span> */}
+                </p>
               </div>
-            )}
+            </div>
           </div>
-        ))}
+          {messages.map((msg, index) => (
+            <div
+              key={index}
+              className={
+                msg.isUser
+                  ? "user-message m-1 p-1 text-right"
+                  : "chatbot-message m-1 p-1"
+              }
+            >
+              {/* Render user message */}
+              {msg.isUser ? (
+                <div className="flex flex-col justify-start items-end">
+                  <div className="flex flex-row justify-end items-end sm:w-3/4">
+                    <span className="flex flex-col justify-start items-center">
+                      <div className="w-full mb-2 p-1 rounded-md bg-[#e1ecf4]">
+                        {msg.text}
+                      </div>
+                    </span>
+                    <div className="flex flex-row justify-between items-center my-1">
+                      <img
+                        src={Profile}
+                        loading="lazy"
+                        alt="Chatbot Profile"
+                        className="mr-1 p-1 w-8"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                // Render chatbot message
+                <div className="flex flex-col justify-start items-start">
+                  <div className="flex flex-row justify-start items-start">
+                    <img
+                      src={Copilot1}
+                      loading="lazy"
+                      alt="Chatbot Profile"
+                      className="mr-1 w-6"
+                    />
+
+                    <span className="flex flex-col justify-start items-start">
+                      <div className="sm:w-[100%] w-full mb-2 flex flex-col justify-start items-start p-1 bg-[#efefef]  rounded-md">
+                        <AnimatedText message={msg.text} />
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
 
         {/* </ScrollContainer> */}
+        {showChatbot && (
+          <form
+            onSubmit={handleSubmit}
+            style={showChatbot ? {} : shadowStyle}
+            className={
+              showChatbot
+                ? "sticky bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  "
+                : "flex flex-row sticky bottom-0 sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]   "
+            }
+          >
+            <div
+              className={
+                showChatbot
+                  ? "flex flex-row justify-between items-center bg-white rounded-xl"
+                  : "flex flex-row justify-between items-center "
+              }
+            >
+              {showChatbot && (
+                <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
+                  <GrCopy className="text-xl" />
+                </div>
+              )}
+              {showChatbot && (
+                <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
+                  <TiMicrophone className="text-xl" />
+                </div>
+              )}
+
+              <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
+                <input
+                  type="text"
+                  value={inputText}
+                  placeholder={
+                    showplaceholder ? placeholder : "ask me anything..."
+                  }
+                  className="focus:outline-none w-full rounded-full text-md sm:px-3 p-[0.35rem]"
+                  onChange={handleInputChange}
+                  onClick={handleshow}
+                  required
+                />
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="flex justify-center items-center  text-black text-md px-2 rounded-full py-2 relative h-10 sm:text-[10.5px]"
+                >
+                  <img src={search} alt="" className="sm:w-10 w-12" />
+                </button>
+              </div>
+            </div>
+          </form>
+        )}
       </div>
-      {/* {showChatbot && (
-        <div className="gradient1 flex flex-row justify-between px-4  mt-1">
-          <div className="flex flex-col justify-center items-center text-white text-lg">
-            <IoHome
-              onClick={() => {
-                setShowChatbot(false);
-              }}
-              className="p-1 pt-2 text-4xl"
-            />
-            <p>Home</p>
-          </div>
-          <div className="flex flex-col justify-center items-center text-white text-lg border-t-white border-t-4">
-            <IoSearch className="p-1 pt-2 text-4xl" />
-            <p>Search</p>
-          </div>
-
-          <div className="flex flex-col justify-center items-center text-white text-lg">
-            <FaHistory className="p-1 pt-2 text-4xl" />
-            <p>History</p>
-          </div>
-        </div>
-      )} */}
-
-      <form
-        onSubmit={handleSubmit}
-        style={showChatbot ? {} : shadowStyle}
-        className={
-          showChatbot
-            ? "sticky bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  "
-            : "flex flex-row sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]   "
-        }
-      >
-        <div
+      {!showChatbot && (
+        <form
+          onSubmit={handleSubmit}
+          style={showChatbot ? {} : shadowStyle}
           className={
             showChatbot
-              ? "flex flex-row justify-between items-center bg-white rounded-xl"
-              : "flex flex-row justify-between items-center "
+              ? "sticky bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  "
+              : "flex flex-row sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]   "
           }
         >
-          {showChatbot && (
-            <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
-              <GrCopy className="text-xl" />
-            </div>
-          )}
-          {showChatbot && (
-            <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
-              <TiMicrophone className="text-xl" />
-            </div>
-          )}
+          <div
+            className={
+              showChatbot
+                ? "flex flex-row justify-between items-center bg-white rounded-xl"
+                : "flex flex-row justify-between items-center "
+            }
+          >
+            {showChatbot && (
+              <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
+                <GrCopy className="text-xl" />
+              </div>
+            )}
+            {showChatbot && (
+              <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
+                <TiMicrophone className="text-xl" />
+              </div>
+            )}
 
-          <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
-            <input
-              type="text"
-              value={inputText}
-              placeholder={showplaceholder ? placeholder : "ask me anything..."}
-              className="focus:outline-none w-full rounded-full text-md sm:px-3 p-[0.35rem]"
-              onChange={handleInputChange}
-              onClick={handleshow}
-              required
-            />
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="flex justify-center items-center  text-black text-md px-2 rounded-full py-2 relative h-10 sm:text-[10.5px]"
-            >
-              <img src={search} alt="" className="sm:w-10 w-12" />
-            </button>
+            <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
+              <input
+                type="text"
+                value={inputText}
+                placeholder={
+                  showplaceholder ? placeholder : "ask me anything..."
+                }
+                className="focus:outline-none w-full rounded-full text-md sm:px-3 p-[0.35rem]"
+                onChange={handleInputChange}
+                onClick={handleshow}
+                required
+              />
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="flex justify-center items-center  text-black text-md px-2 rounded-full py-2 relative h-10 sm:text-[10.5px]"
+              >
+                <img src={search} alt="" className="sm:w-10 w-12" />
+              </button>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      )}
     </div>
   );
 }
