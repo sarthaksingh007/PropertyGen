@@ -290,7 +290,6 @@ function Chatbot() {
           <TbDots className="text-white text-2xl" />
         </div>
       </div>
-
       <div
         className={
           showChatbot
