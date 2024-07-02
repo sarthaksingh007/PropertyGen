@@ -294,8 +294,8 @@ function Chatbot() {
       <div
         className={
           showChatbot
-            ? "messages-container  rounded-t-[2.5rem] sm:h-[80vh] h-[88vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
-            : "messages-container  rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
+            ? "messages-container z-30 relative   rounded-t-[2.5rem] sm:h-[80vh] h-[88vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
+            : "messages-container z-30 relative   rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
         }
       >
         <div className="h-auto ">
@@ -386,14 +386,17 @@ function Chatbot() {
 
         {/* </ScrollContainer> */}
         {showChatbot && (
-          <div className="absolute bottom-0 w-full ">
+          <div
+            className="fixed 
+  bottom-0 w-full "
+          >
             <form
               onSubmit={handleSubmit}
               style={showChatbot ? {} : shadowStyle}
               className={
                 showChatbot
-                  ? "sticky bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  "
-                  : "flex flex-row sticky bottom-0 sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]   "
+                  ? "sticky  bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  bg-white"
+                  : "flex  flex-row sticky bottom-0 sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]   bg-white"
               }
             >
               <div
