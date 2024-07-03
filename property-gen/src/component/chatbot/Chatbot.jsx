@@ -401,8 +401,8 @@ function Chatbot() {
               <div
                 className={
                   showChatbot
-                    ? "flex flex-row justify-between items-center bg-white rounded-xl"
-                    : "flex flex-row justify-between items-center "
+                    ? "flex flex-row justify-between items-center bg-white rounded-xl w-full"
+                    : "flex flex-row justify-between items-center  w-full"
                 }
               >
                 {showChatbot && (
@@ -458,20 +458,11 @@ function Chatbot() {
           <div
             className={
               showChatbot
-                ? "flex flex-row justify-between items-center bg-white rounded-xl"
-                : "flex flex-row justify-between items-center "
+                ? "flex flex-row justify-between items-center bg-white rounded-xl w-full"
+                : "flex flex-row justify-between items-center  w-full"
             }
           >
-            {showChatbot && (
-              <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
-                <GrCopy className="text-xl" />
-              </div>
-            )}
-            {showChatbot && (
-              <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
-                <TiMicrophone className="text-xl" />
-              </div>
-            )}
+            
 
             <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
               <input

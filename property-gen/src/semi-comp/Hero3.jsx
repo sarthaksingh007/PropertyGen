@@ -97,9 +97,9 @@ const Hero3 = () => {
           </div>
         ))} */}
         
-        <img src={Block} className="sm:w-1/3 sm:p-1 p-2" alt="" />
-        <img src={Block1} className="sm:w-1/3 sm:p-1 p-2" alt="" />
-        <img src={Block2} className="sm:w-1/3 sm:p-1 p-2" alt="" />
+        <img src={Block} className="sm:w-[30%] sm:p-1 p-2" alt="" />
+        <img src={Block1} className="sm:w-[30%] sm:p-1 p-2" alt="" />
+        <img src={Block2} className="sm:w-[30%] sm:p-1 p-2" alt="" />
       </div>
     </div>
   );
