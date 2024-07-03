@@ -387,7 +387,7 @@ function Chatbot() {
         {/* </ScrollContainer> */}
         {showChatbot && (
           <div
-            className="fixed bottom-0 w-full "
+            className="fixed bottom-0 w-full z-50"
           >
             <form
               onSubmit={handleSubmit}
