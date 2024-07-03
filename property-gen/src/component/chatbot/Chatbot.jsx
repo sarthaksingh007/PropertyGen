@@ -325,7 +325,7 @@ function Chatbot() {
                 </div>
                 <p className="">
                   {/* <span className="flex flex-col justify-start items-start"> */}
-                  <div className="w-full flex flex-col justify-start items-center p-1 bg-[#E2E0EF] rounded-md">
+                  <div className="w-full flex flex-col justify-start text-white items-center p-1 bg-[#0558EE] rounded-md">
                     {defaultChatbotMessage.text}
                   </div>
                   {/* </span> */}
@@ -373,7 +373,7 @@ function Chatbot() {
                     />
 
                     <span className="flex flex-col justify-start items-start">
-                      <div className="sm:w-[100%] w-full mb-2 flex flex-col justify-start items-start p-1 bg-[#E2E0EF]  rounded-md">
+                      <div className="sm:w-[100%] w-full mb-2 flex flex-col justify-start text-white items-start p-1 bg-[#0558EE]  rounded-md">
                         <AnimatedText message={msg.text} />
                       </div>
                     </span>
