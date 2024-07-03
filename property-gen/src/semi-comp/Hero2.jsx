@@ -61,6 +61,10 @@ const Hero2 = () => {
               //   </p>
               // </div>
               <img
+                width="300"
+                height="200"
+                sizes="(max-width: 640px) 30vw, 200px"
+                loading="lazy"
                 key={index}
                 className="sm:w-[15%] w-[40%] sm:p-2 sm:m-2 p-1 m-1"
                 src={item.imgs}

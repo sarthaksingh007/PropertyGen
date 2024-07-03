@@ -44,16 +44,17 @@ const Hero3 = () => {
   return (
     <div>
       <p className="text-white my-3 sm:text-xl text-lg w-[93%] ml-auto mt-5">
-          Explore Listings
-        </p>
+        Explore Listings
+      </p>
       <div
-        className="flex sm:flex-row flex-col justify-between sm:p-2  sm:w-4/5 w-[83%] mx-auto my-8 rounded-2xl  items-center bg-opacity-85 bg-[#2b292959]"
+        className="flex sm:flex-row flex-col justify-between sm:p-2 sm:w-4/5 w-[83%] mx-auto my-8 rounded-2xl items-center bg-opacity-85 bg-[#2b292959]"
         style={shadowStyle}
       >
+        {/* Map through items */}
         {/* {items.map((item, index) => (
           <div
             key={index}
-            className={`p-3 flex flex-col sm:w-[28%] w-full justify-between sm:h-96 h-58  sm:m-2 sm:my-4 my-2 rounded-2xl ${
+            className={`p-3 flex flex-col sm:w-[28%] w-full justify-between sm:h-96 h-58 sm:m-2 sm:my-4 my-2 rounded-2xl ${
               index === 0
                 ? "takelook"
                 : index === 1
@@ -63,12 +64,12 @@ const Hero3 = () => {
                 : ""
             }`}
           >
-            <div className="flex flex-row items-center justify-between ">
-              <p className="flex flex-row justify-center items-center text-white ">
+            <div className="flex flex-row items-center justify-between">
+              <p className="flex flex-row justify-center items-center text-white">
                 <HiOutlineLocationMarker />
                 {item.location}
               </p>
-              <p className="flex flex-row justify-center items-center text-white ">
+              <p className="flex flex-row justify-center items-center text-white">
                 <MdOutlineRemoveRedEye />
                 {item.viewing}
               </p>
@@ -93,13 +94,39 @@ const Hero3 = () => {
               <RiLoginBoxFill />
               Take a look
             </button>
-            
           </div>
         ))} */}
-        
-        <img src={Block} className="sm:w-[30%] sm:p-1 p-2" alt="" />
-        <img src={Block1} className="sm:w-[30%] sm:p-1 p-2" alt="" />
-        <img src={Block2} className="sm:w-[30%] sm:p-1 p-2" alt="" />
+
+        <img
+          src={Block}
+          alt="Image description for Block"
+          className="sm:w-[30%] sm:p-1 p-2"
+          width="300"
+          height="200"
+          // srcSet="./../assets/P1.png 300w, /path/to/block-600w.jpg 600w"
+          sizes="(max-width: 640px) 30vw, 200px"
+          loading="lazy"
+        />
+        <img
+          src={Block1}
+          alt="Image description for Block1"
+          className="sm:w-[30%] sm:p-1 p-2"
+          width="300"
+          height="200"
+          // srcSet="/path/to/block1-300w.jpg 300w, /path/to/block1-600w.jpg 600w"
+          sizes="(max-width: 640px) 30vw, 200px"
+          loading="lazy"
+        />
+        <img
+          src={Block2}
+          alt="Image description for Block2"
+          className="sm:w-[30%] sm:p-1 p-2"
+          width="300"
+          height="200"
+          // srcSet="/path/to/block2-300w.jpg 300w, /path/to/block2-600w.jpg 600w"
+          sizes="(max-width: 640px) 30vw, 200px"
+          loading="lazy"
+        />
       </div>
     </div>
   );
