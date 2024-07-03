@@ -36,11 +36,11 @@ const Hero2 = () => {
         </div>
       </div> */}
       <div className="mt-6">
-        <div className="sm:pl-[4.5rem] pl-[1.3rem]">
-          <p className="text-white p-1 m-1 my-3 sm:text-xl text-lg w-[98%] ml-auto">
+          <p className="text-white sm:pl-[4.5rem] pl-[1.3rem] p-1 m-1 my-3 sm:text-xl text-lg w-[98%] ml-auto">
             Our features
           </p>
-          <div className="flex   flex-row justify-evenly items-center overflow-x-auto  w-full">
+        <div className="">
+          <div className="flex sm:pl-[4.5rem] pl-[1.3rem]  flex-row justify-evenly items-center overflow-x-auto  w-full">
             {[
               { imgs: m1 },
               { imgs: m2 },

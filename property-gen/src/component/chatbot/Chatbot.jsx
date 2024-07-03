@@ -306,8 +306,8 @@ function Chatbot() {
               <h1 className="font-extrabold text-3xl text-blue-900 mb-3">
                 Propit AI
               </h1>
-              <p className="w-[98%] text-center text-sm text-gray-600 mx-auto ">
-                I&apos;m your ultimate Real Estate expert, specializing in market
+              <p className="w-[98%] text-center text-sm text-blue-900 mx-auto ">
+                I&apos;m your <b>ultimate Real Estate expert</b> , specializing in market
                 analysis, property pricing, community comparisons, and more.
                 Whether you&apos;re an investor, a family, or a student, consult me
                 for insights on any street, in any city worldwide.
