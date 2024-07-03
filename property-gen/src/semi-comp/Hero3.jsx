@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import Rating from "@mui/material/Rating";
@@ -6,6 +6,7 @@ import { RiLoginBoxFill } from "react-icons/ri";
 import Block from "./../assets/P1.png";
 import Block1 from "./../assets/P2.png";
 import Block2 from "./../assets/P3.png";
+import { ChatbotContext } from "../chatContext";
 
 const items = [
   {
@@ -35,6 +36,7 @@ const items = [
 ];
 
 const Hero3 = () => {
+  const { setShowChatbot, showChatbot } = useContext(ChatbotContext);
   const shadowStyle = {
     WebkitBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
     MozBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
@@ -98,9 +100,12 @@ const Hero3 = () => {
         ))} */}
 
         <img
+          onClick={() => {
+            setShowChatbot(true);
+          }}
           src={Block}
           alt="Image description for Block"
-          className="sm:w-[30%] sm:p-1 p-2"
+          className="sm:w-[30%] sm:p-1 p-2 cursor-pointer"
           width="300"
           height="200"
           // srcSet="./../assets/P1.png 300w, /path/to/block-600w.jpg 600w"
@@ -108,9 +113,12 @@ const Hero3 = () => {
           loading="lazy"
         />
         <img
+          onClick={() => {
+            setShowChatbot(true);
+          }}
           src={Block1}
           alt="Image description for Block1"
-          className="sm:w-[30%] sm:p-1 p-2"
+          className="sm:w-[30%] sm:p-1 p-2 cursor-pointer"
           width="300"
           height="200"
           // srcSet="/path/to/block1-300w.jpg 300w, /path/to/block1-600w.jpg 600w"
@@ -118,9 +126,12 @@ const Hero3 = () => {
           loading="lazy"
         />
         <img
+          onClick={() => {
+            setShowChatbot(true);
+          }}
           src={Block2}
           alt="Image description for Block2"
-          className="sm:w-[30%] sm:p-1 p-2"
+          className="sm:w-[30%] sm:p-1 p-2 cursor-pointer"
           width="300"
           height="200"
           // srcSet="/path/to/block2-300w.jpg 300w, /path/to/block2-600w.jpg 600w"

@@ -307,9 +307,10 @@ function Chatbot() {
                 Propit AI
               </h1>
               <p className="w-[98%] text-center text-sm text-gray-600 mx-auto ">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Minima, ex reprehenderit? Ducimus quod cum, laborum perferendis
-                reiciendis nesciunt iste placeat fugiat omnis ad
+                I&apos;m your ultimate Real Estate expert, specializing in market
+                analysis, property pricing, community comparisons, and more.
+                Whether you&apos;re an investor, a family, or a student, consult me
+                for insights on any street, in any city worldwide.
               </p>
             </div>
             <div className="flex flex-col justify-center items-start">
@@ -462,8 +463,6 @@ function Chatbot() {
                 : "flex flex-row justify-between items-center  w-full"
             }
           >
-            
-
             <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
               <input
                 type="text"
