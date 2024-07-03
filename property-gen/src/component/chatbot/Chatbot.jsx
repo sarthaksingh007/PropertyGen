@@ -227,7 +227,7 @@ function Chatbot() {
         onUpdate: (latest) => {
           setPlaceholder(phrase.slice(0, latest));
         },
-        delay: 0.5,
+        delay: 0.2,
         duration: 0.5,
       });
 
@@ -293,8 +293,8 @@ function Chatbot() {
       <div
         className={
           showChatbot
-            ? "messages-container pb-[4rem] z-30 relative   rounded-t-[2.5rem] sm:h-[80vh] h-[88vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
-            : "messages-container pb-[4rem] z-30 relative   rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
+            ? "messages-container pb-[4rem]    rounded-t-[2.5rem] sm:h-[80vh] h-[90vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
+            : "messages-container pb-[4rem]    rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
         }
       >
         <div className="h-auto ">
@@ -387,8 +387,7 @@ function Chatbot() {
         {/* </ScrollContainer> */}
         {showChatbot && (
           <div
-            className="fixed 
-  bottom-0 w-full "
+            className="fixed bottom-0 w-full "
           >
             <form
               onSubmit={handleSubmit}
