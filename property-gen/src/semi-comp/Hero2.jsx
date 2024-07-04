@@ -36,9 +36,9 @@ const Hero2 = () => {
         </div>
       </div> */}
       <div className="mt-6">
-          <p className="text-white sm:pl-[4.5rem] pl-[1.3rem] p-1 m-1 my-3 sm:text-xl text-lg w-[98%] ml-auto">
-            Our features
-          </p>
+        <p className="text-white sm:pl-[4.5rem] pl-[1.3rem] p-1 m-1 my-3 sm:text-xl text-lg w-[98%] ml-auto">
+          Our features
+        </p>
         <div className="">
           <div className="flex sm:pl-[4.5rem] pl-[1.3rem]  flex-row justify-evenly items-center overflow-x-auto  w-full">
             {[
@@ -49,21 +49,10 @@ const Hero2 = () => {
               { imgs: m5 },
               { imgs: m6 },
             ].map((item, index) => (
-              // <div
-              //   key={index}
-              //   className="bg-white flex flex-row justify-between items-center whitespace-nowrap rounded-full m-2 "
-              // >
-              //   <p className="gradient text-white sm:p-2 p-3 sm:text-lg text-base font-semibold rounded-full">
-              //     {item.id}
-              //   </p>
-              //   <p className="text-black p-2 sm:text-lg text-sm font-lightbold">
-              //     {item.text}
-              //   </p>
-              // </div>
               <img
-                // width="300"
-                // height="200"
-                // sizes="(max-width: 640px) 30vw, 200px"
+                width="300"
+                height="200"
+                sizes="(max-width: 640px) 30vw, 200px"
                 // loading="lazy"
                 key={index}
                 className="sm:w-[15%] w-[40%] sm:p-2 sm:m-2 p-1 m-1"
