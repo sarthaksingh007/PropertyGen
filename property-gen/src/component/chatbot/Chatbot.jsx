@@ -293,8 +293,8 @@ function Chatbot() {
       <div
         className={
           showChatbot
-            ? "messages-container pb-[4rem]    rounded-t-[2.5rem] sm:h-[80vh] h-[90vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
-            : "messages-container pb-[4rem]    rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
+            ? "messages-container pb-[4rem] z-30 relative    rounded-t-[2.5rem] sm:h-[80vh] h-[90vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
+            : "messages-container pb-[4rem] z-30 relative    rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
         }
       >
         <div className="h-auto ">
