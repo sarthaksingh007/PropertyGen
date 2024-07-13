@@ -26,7 +26,7 @@ const AnimatedText = ({ message }) => {
       } else {
         clearInterval(animationInterval);
       }
-    }, 20); // Adjust speed here (milliseconds)
+    }, 5); // Adjust speed here (milliseconds)
 
     return () => clearInterval(animationInterval);
   }, [message]);

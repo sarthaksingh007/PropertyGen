@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import Rating from "@mui/material/Rating";
@@ -6,6 +6,7 @@ import { RiLoginBoxFill } from "react-icons/ri";
 import Block from "./../assets/P1.png";
 import Block1 from "./../assets/P2.png";
 import Block2 from "./../assets/P3.png";
+import { ChatbotContext } from "../chatContext";
 
 const items = [
   {
@@ -35,6 +36,7 @@ const items = [
 ];
 
 const Hero3 = () => {
+  const { setShowChatbot, showChatbot } = useContext(ChatbotContext);
   const shadowStyle = {
     WebkitBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
     MozBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
@@ -43,14 +45,18 @@ const Hero3 = () => {
 
   return (
     <div>
+      <p className="text-white my-3 sm:text-xl text-lg w-[93%] ml-auto mt-5">
+        Explore Listings
+      </p>
       <div
-        className="flex sm:flex-row flex-col justify-between sm:p-2  sm:w-4/5 w-[83%] mx-auto my-8 rounded-2xl  items-center bg-opacity-85 bg-[#2b292959]"
+        className="flex sm:flex-row flex-col justify-between sm:p-2 sm:w-4/5 w-[83%] mx-auto my-8 rounded-2xl items-center bg-opacity-85 bg-[#2b292959]"
         style={shadowStyle}
       >
+        {/* Map through items */}
         {/* {items.map((item, index) => (
           <div
             key={index}
-            className={`p-3 flex flex-col sm:w-[28%] w-full justify-between sm:h-96 h-58  sm:m-2 sm:my-4 my-2 rounded-2xl ${
+            className={`p-3 flex flex-col sm:w-[28%] w-full justify-between sm:h-96 h-58 sm:m-2 sm:my-4 my-2 rounded-2xl ${
               index === 0
                 ? "takelook"
                 : index === 1
@@ -60,12 +66,12 @@ const Hero3 = () => {
                 : ""
             }`}
           >
-            <div className="flex flex-row items-center justify-between ">
-              <p className="flex flex-row justify-center items-center text-white ">
+            <div className="flex flex-row items-center justify-between">
+              <p className="flex flex-row justify-center items-center text-white">
                 <HiOutlineLocationMarker />
                 {item.location}
               </p>
-              <p className="flex flex-row justify-center items-center text-white ">
+              <p className="flex flex-row justify-center items-center text-white">
                 <MdOutlineRemoveRedEye />
                 {item.viewing}
               </p>
@@ -90,12 +96,45 @@ const Hero3 = () => {
               <RiLoginBoxFill />
               Take a look
             </button>
-            
           </div>
         ))} */}
-        <img src={Block} className="sm:w-1/3 sm:p-1 p-2" alt="" />
-        <img src={Block1} className="sm:w-1/3 sm:p-1 p-2" alt="" />
-        <img src={Block2} className="sm:w-1/3 sm:p-1 p-2" alt="" />
+
+        <img
+          onClick={() => {
+            setShowChatbot(true);
+          }}
+          src={Block}
+          alt="Image description for Block"
+          className="sm:w-[30%] sm:p-1 p-2 cursor-pointer"
+          
+          // srcSet="./../assets/P1.png 300w, /path/to/block-600w.jpg 600w"
+          sizes="(max-width: 640px) 30vw, 200px"
+          loading="lazy"
+        />
+        <img
+          onClick={() => {
+            setShowChatbot(true);
+          }}
+          src={Block1}
+          alt="Image description for Block1"
+          className="sm:w-[30%] sm:p-1 p-2 cursor-pointer"
+          
+          // srcSet="/path/to/block1-300w.jpg 300w, /path/to/block1-600w.jpg 600w"
+          sizes="(max-width: 640px) 30vw, 200px"
+          loading="lazy"
+        />
+        <img
+          onClick={() => {
+            setShowChatbot(true);
+          }}
+          src={Block2}
+          alt="Image description for Block2"
+          className="sm:w-[30%] sm:p-1 p-2 cursor-pointer"
+          
+          // srcSet="/path/to/block2-300w.jpg 300w, /path/to/block2-600w.jpg 600w"
+          sizes="(max-width: 640px) 30vw, 200px"
+          loading="lazy"
+        />
       </div>
     </div>
   );

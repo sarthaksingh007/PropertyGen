@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { ChatbotContext } from "../chatContext";
 const Last = () => {
+  const { setShowChatbot, showChatbot } = useContext(ChatbotContext);
   const shadowStyle = {
     WebkitBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
     MozBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
@@ -16,7 +18,7 @@ const Last = () => {
           Move from <span className="gotpara">information</span> to{" "}
           <span className="gotpara">insights</span> with Property Genius!
         </h1>
-        <button className="flex flex-row justify-center items-center text-white custom-gradient text-lg rounded-full p-2 my-5 mx-auto w-3/4">
+        <button onClick={()=>{setShowChatbot(true)}} className="flex flex-row justify-center items-center text-white custom-gradient text-lg rounded-full p-2 my-5 mx-auto w-3/4">
           Begin Journey
           <FaArrowRightLong className="ml-3" />
         </button>
