@@ -16,7 +16,7 @@ const Last = () => {
       >
         <h1 className="sm:text-3xl text-2xl font-bold text-center text-white">
           Move from <span className="gotpara">information</span> to{" "}
-          <span className="gotpara">insights</span> with Property Genius!
+          <span className="gotpara">insights</span> with Propit AI!
         </h1>
         <button onClick={()=>{setShowChatbot(true)}} className="flex flex-row justify-center items-center text-white custom-gradient text-lg rounded-full p-2 my-5 mx-auto w-3/4">
           Begin Journey

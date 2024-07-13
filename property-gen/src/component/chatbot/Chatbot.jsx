@@ -3,10 +3,8 @@ import { animate } from "framer-motion";
 import axios from "axios";
 import "./chatbot.css";
 
-
 import Copilot1 from "./../../assets/propit2.png";
-import Profile from "./../../assets/profile.jpeg";
-import AnimatedText from "./../chatbot/AnimatedText.jsx";
+
 import { ChatbotContext } from "../../../src/chatContext.jsx";
 
 import search from "./../../assets/search.png";
@@ -15,6 +13,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { TiMicrophone } from "react-icons/ti";
 import { GrCopy } from "react-icons/gr";
 import { BsFillSendFill } from "react-icons/bs";
+import Message from "./Message.jsx";
 // import PropertyList from "../../../component/PropertyList.jsx";
 
 function Chatbot() {
@@ -241,16 +240,20 @@ function Chatbot() {
     isUser: false,
   };
   const messagesContainerRef = useRef(null);
+
   const scrollToBottom = () => {
-    if (messagesContainerRef.current) {
-      messagesContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    const container = messagesContainerRef.current;
+    if (container) {
+      const { scrollHeight, clientHeight } = container;
+      const maxScrollTop = scrollHeight - clientHeight;
+      container.scrollTop = Math.max(maxScrollTop, 0);
     }
   };
 
-  // Watch for changes in the messages array and scroll to bottom when it changes
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
   return (
     <div
       className={
@@ -284,7 +287,7 @@ function Chatbot() {
       <div
         className={
           showChatbot
-            ? "messages-container pb-[4rem] z-30 relative rounded-t-[2.5rem] sm:h-[80vh] h-[90vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto bg-white"
+            ? "messages-container pb-[4rem] z-30 relative rounded-t-[2.5rem] sm:h-[80vh] h-[80vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto bg-white"
             : "messages-container pb-[4rem] z-30 relative rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
         }
       >
@@ -322,54 +325,10 @@ function Chatbot() {
               </div>
             </div>
           </div>
-          <div className="messages-container">
+          <div className="messages-container" ref={messagesContainerRef}>
             {messages.map((msg, index) => (
-              <div
-                key={index}
-                className={
-                  msg.isUser
-                    ? "user-message m-1 p-1 text-right"
-                    : "chatbot-message m-1 p-1"
-                }
-              >
-                {msg.isUser ? (
-                  <div className="flex flex-col justify-start items-end">
-                    <div className="flex flex-row justify-end items-end sm:w-3/4">
-                      <span className="flex flex-col justify-start items-center">
-                        <div className="w-full mb-2 p-1 text-white rounded-md bg-[#685ABF]">
-                          {msg.text}
-                        </div>
-                      </span>
-                      <div className="flex flex-row justify-between items-center my-1">
-                        <img
-                          src={Profile}
-                          loading="lazy"
-                          alt="User Profile"
-                          className="mr-1 p-1 w-8"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="flex flex-col justify-start items-start">
-                    <div className="flex flex-row justify-start items-start">
-                      <img
-                        src={Copilot1}
-                        loading="lazy"
-                        alt="Chatbot Profile"
-                        className="mr-1 w-6"
-                      />
-                      <span className="flex flex-col justify-start items-start">
-                        <div className="sm:w-[100%] w-full mb-2 flex flex-col justify-start items-start p-1 bg-[#E2E0EF] rounded-md">
-                          <AnimatedText message={msg.text} />
-                        </div>
-                      </span>
-                    </div>
-                  </div>
-                )}
-              </div>
+              <Message key={index} msg={msg} scrollIntoView={index === messages.length - 1} />
             ))}
-            <div ref={messagesContainerRef}></div>
           </div>
         </div>
         {/* </ScrollContainer> */}

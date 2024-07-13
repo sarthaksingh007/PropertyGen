@@ -19,7 +19,7 @@ const Header = () => {
           to="/"
           className="flex title-font font-medium items-center mb-4 md:mb-0"
         >
-          <img src={logo} alt="Logo" className="w-auto sm:h-8 h-12 " />
+          <img src={logo} alt="Logo" className="w-auto sm:h-12 h-12 " />
         </Link>
         <nav
           className={`relative   flex sm:flex-row flex-col sm:mt-1 mt-20  flex-wrap items-center text-base justify-center md:flex-row transition-opacity duration-300 ${
