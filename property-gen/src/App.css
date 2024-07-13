@@ -71,6 +71,7 @@ body {
   background: linear-gradient(90deg, #ff0056 0%, #a21ded 65%, #a21ded 100%);
   z-index: -1; /* Place the pseudo-element behind the content */
 }
+
 .loader {
   width: 30px;
   aspect-ratio: 1;

@@ -187,7 +187,7 @@ function Chatbot() {
       },
     ]);
   }, []);
-  // const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
   const [placeholder, setPlaceholder] = useState("");
   const questions = useMemo(
     () => [
@@ -199,11 +199,6 @@ function Chatbot() {
     ],
     []
   );
-  // const inputRef = useRef(null);
-  // useEffect(() => {
-  //   // Focus on the input field when the component mounts
-  //   inputRef.current.focus();
-  // }, []);
 
   useEffect(() => {
     let currentIndex = 0;
@@ -248,38 +243,36 @@ function Chatbot() {
     isUser: false,
   };
   const messagesContainerRef = useRef(null);
-
-  useEffect(() => {
-    // Adjust height of messages container based on its content
+  const scrollToBottom = () => {
     if (messagesContainerRef.current) {
-      const containerHeight = messagesContainerRef.current.scrollHeight;
-      messagesContainerRef.current.style.height = containerHeight + "px";
+      messagesContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }
-  }, [messages, showChatbot]);
+  };
 
+  // Watch for changes in the messages array and scroll to bottom when it changes
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
   return (
     <div
       className={
         showChatbot
-          ? "dm mx-auto sm:w-full w-full bg-[#685ABF]  bg-opacity-100 rounded-lg border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] pb-4"
-          : "dm mx-auto sm:w-2/4     "
+          ? "dm mx-auto sm:w-full w-full bg-[#685ABF] bg-opacity-100 rounded-lg border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] pb-4"
+          : "dm mx-auto sm:w-2/4"
       }
     >
       <div
         className={
           showChatbot
-            ? "bg-[#685ABF] p-3  rounded-t-[2.5rem] sticky top-0 w-full pt-5  z-20"
+            ? "bg-[#685ABF] p-3 rounded-t-[2.5rem] sticky top-0 w-full pt-5 z-20"
             : "bg-[#685ABF] rounded-lg z-20 hidden pt-5"
         }
       >
         <div className="flex flex-row justify-between items-center">
           <FaArrowLeftLong
-            onClick={() => {
-              setShowChatbot(false);
-            }}
-            className="text-white  text-xl"
+            onClick={() => setShowChatbot(false)}
+            className="text-white text-xl"
           />
-
           <div className="flex items-center flex-col">
             <h1 className="text-white text-lg">Propit AI</h1>
             <div className="flex flex-row justify-center items-center">
@@ -293,11 +286,11 @@ function Chatbot() {
       <div
         className={
           showChatbot
-            ? "messages-container pb-[4rem] z-30 relative    rounded-t-[2.5rem] sm:h-[80vh] h-[90vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto  bg-white"
-            : "messages-container pb-[4rem] z-30 relative    rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
+            ? "messages-container pb-[4rem] z-30 relative rounded-t-[2.5rem] sm:h-[80vh] h-[90vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto bg-white"
+            : "messages-container pb-[4rem] z-30 relative rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
         }
       >
-        <div className="h-auto ">
+        <div className="h-auto">
           <div className="chatbot-message m-1 p-1">
             <div className="flex flex-col items-center my-4">
               <h1 className="font-extrabold text-3xl text-blue-900">
@@ -306,11 +299,11 @@ function Chatbot() {
               <h1 className="font-extrabold text-3xl text-blue-900 mb-3">
                 Propit AI
               </h1>
-              <p className="w-[98%] text-center text-sm text-blue-900 mx-auto ">
-                I&apos;m your <b>ultimate Real Estate expert</b> , specializing in market
-                analysis, property pricing, community comparisons, and more.
-                Whether you&apos;re an investor, a family, or a student, consult me
-                for insights on any street, in any city worldwide.
+              <p className="w-[98%] text-center text-sm text-blue-900 mx-auto">
+                I&apos;m your <b>ultimate Real Estate expert</b>, specializing
+                in market analysis, property pricing, community comparisons, and
+                more. Whether you&apos;re an investor, a family, or a student,
+                consult me for insights on any street, in any city worldwide.
               </p>
             </div>
             <div className="flex flex-col justify-center items-start">
@@ -324,71 +317,66 @@ function Chatbot() {
                   />
                 </div>
                 <p className="">
-                  {/* <span className="flex flex-col justify-start items-start"> */}
                   <div className="w-full flex flex-col justify-start items-center p-1 bg-[#E2E0EF] rounded-md">
                     {defaultChatbotMessage.text}
                   </div>
-                  {/* </span> */}
                 </p>
               </div>
             </div>
           </div>
-          {messages.map((msg, index) => (
-            <div
-              key={index}
-              className={
-                msg.isUser
-                  ? "user-message m-1 p-1 text-right"
-                  : "chatbot-message m-1 p-1"
-              }
-            >
-              {/* Render user message */}
-              {msg.isUser ? (
-                <div className="flex flex-col justify-start items-end">
-                  <div className="flex flex-row justify-end items-end sm:w-3/4">
-                    <span className="flex flex-col justify-start items-center">
-                      <div className="w-full mb-2 p-1 text-white rounded-md bg-[#685ABF]">
-                        {msg.text}
+          <div className="messages-container">
+            {messages.map((msg, index) => (
+              <div
+                key={index}
+                className={
+                  msg.isUser
+                    ? "user-message m-1 p-1 text-right"
+                    : "chatbot-message m-1 p-1"
+                }
+              >
+                {msg.isUser ? (
+                  <div className="flex flex-col justify-start items-end">
+                    <div className="flex flex-row justify-end items-end sm:w-3/4">
+                      <span className="flex flex-col justify-start items-center">
+                        <div className="w-full mb-2 p-1 text-white rounded-md bg-[#685ABF]">
+                          {msg.text}
+                        </div>
+                      </span>
+                      <div className="flex flex-row justify-between items-center my-1">
+                        <img
+                          src={Profile}
+                          loading="lazy"
+                          alt="User Profile"
+                          className="mr-1 p-1 w-8"
+                        />
                       </div>
-                    </span>
-                    <div className="flex flex-row justify-between items-center my-1">
-                      <img
-                        src={Profile}
-                        loading="lazy"
-                        alt="Chatbot Profile"
-                        className="mr-1 p-1 w-8"
-                      />
                     </div>
                   </div>
-                </div>
-              ) : (
-                // Render chatbot message
-                <div className="flex flex-col justify-start items-start">
-                  <div className="flex flex-row justify-start items-start">
-                    <img
-                      src={Copilot1}
-                      loading="lazy"
-                      alt="Chatbot Profile"
-                      className="mr-1 w-6"
-                    />
-
-                    <span className="flex flex-col justify-start items-start">
-                      <div className="sm:w-[100%] w-full mb-2 flex flex-col justify-start  items-start p-1 bg-[#E2E0EF]  rounded-md">
-                        <AnimatedText message={msg.text} />
-                      </div>
-                    </span>
+                ) : (
+                  <div className="flex flex-col justify-start items-start">
+                    <div className="flex flex-row justify-start items-start">
+                      <img
+                        src={Copilot1}
+                        loading="lazy"
+                        alt="Chatbot Profile"
+                        className="mr-1 w-6"
+                      />
+                      <span className="flex flex-col justify-start items-start">
+                        <div className="sm:w-[100%] w-full mb-2 flex flex-col justify-start items-start p-1 bg-[#E2E0EF] rounded-md">
+                          <AnimatedText message={msg.text} />
+                        </div>
+                      </span>
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-          ))}
+                )}
+              </div>
+            ))}
+            <div ref={messagesContainerRef}></div>
+          </div>
         </div>
-
         {/* </ScrollContainer> */}
         {showChatbot && (
-          <div
-            className="fixed bottom-0 w-full z-50"
-          >
+          <div className="fixed bottom-0 w-full z-50">
             <form
               onSubmit={handleSubmit}
               style={showChatbot ? {} : shadowStyle}
