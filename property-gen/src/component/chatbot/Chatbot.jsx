@@ -258,7 +258,7 @@ function Chatbot() {
     <div
       className={
         showChatbot
-          ? "dm mx-auto sm:w-full w-full bg-[#685ABF] bg-opacity-100 rounded-lg border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] pb-4"
+          ? "dm mx-auto sm:w-full w-full purple-gradient bg-opacity-100 rounded-lg border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] pb-4"
           : "dm mx-auto sm:w-2/4"
       }
     >
@@ -327,69 +327,73 @@ function Chatbot() {
           </div>
           <div className="messages-container" ref={messagesContainerRef}>
             {messages.map((msg, index) => (
-              <Message key={index} msg={msg} scrollIntoView={index === messages.length - 1} />
+              <Message
+                key={index}
+                msg={msg}
+                scrollIntoView={index === messages.length - 1}
+              />
             ))}
           </div>
         </div>
         {/* </ScrollContainer> */}
-        {showChatbot && (
-          <div className="fixed bottom-0 w-full z-50">
-            <form
-              onSubmit={handleSubmit}
-              style={showChatbot ? {} : shadowStyle}
+      </div>
+      {showChatbot && (
+        <div className="absolute bottom-0 w-full z-50">
+          <form
+            onSubmit={handleSubmit}
+            style={showChatbot ? {} : shadowStyle}
+            className={
+              showChatbot
+                ? "sticky  bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  bg-white"
+                : "flex  flex-row sticky bottom-0 sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]   bg-white"
+            }
+          >
+            <div
               className={
                 showChatbot
-                  ? "sticky  bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  bg-white"
-                  : "flex  flex-row sticky bottom-0 sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]   bg-white"
+                  ? "flex flex-row justify-between items-center bg-white rounded-xl w-full"
+                  : "flex flex-row justify-between items-center  w-full"
               }
             >
-              <div
-                className={
-                  showChatbot
-                    ? "flex flex-row justify-between items-center bg-white rounded-xl w-full"
-                    : "flex flex-row justify-between items-center  w-full"
-                }
-              >
-                {showChatbot && (
-                  <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
-                    <GrCopy className="text-3xl" />
-                  </div>
-                )}
-                {showChatbot && (
-                  <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
-                    <TiMicrophone className="text-3xl" />
-                  </div>
-                )}
-
-                <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
-                  <input
-                    type="text"
-                    value={inputText}
-                    placeholder={
-                      showplaceholder ? placeholder : "ask me anything..."
-                    }
-                    className="focus:outline-none w-full rounded-full text-md sm:px-3 p-[0.35rem]"
-                    onChange={handleInputChange}
-                    onClick={handleshow}
-                    required
-                  />
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="flex justify-center items-center gradient  text-black text-md px-1 rounded-full  relative h-10 sm:text-[10.5px]"
-                  >
-                    {isLoading ? (
-                      <div className="loader"></div>
-                    ) : (
-                      <BsFillSendFill className="text-4xl p-2 text-white" />
-                    )}
-                  </button>
+              {showChatbot && (
+                <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
+                  <GrCopy className="text-3xl" />
                 </div>
+              )}
+              {showChatbot && (
+                <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
+                  <TiMicrophone className="text-3xl" />
+                </div>
+              )}
+
+              <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
+                <input
+                  type="text"
+                  value={inputText}
+                  placeholder={
+                    showplaceholder ? placeholder : "ask me anything..."
+                  }
+                  className="focus:outline-none w-full rounded-full text-md sm:px-3 p-[0.35rem]"
+                  onChange={handleInputChange}
+                  onClick={handleshow}
+                  required
+                />
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="flex justify-center items-center gradient  text-black text-md px-1 rounded-full  relative h-10 sm:text-[10.5px]"
+                >
+                  {isLoading ? (
+                    <div className="loader"></div>
+                  ) : (
+                    <BsFillSendFill className="text-4xl p-2 text-white" />
+                  )}
+                </button>
               </div>
-            </form>
-          </div>
-        )}
-      </div>
+            </div>
+          </form>
+        </div>
+      )}
       {!showChatbot && (
         <form
           onSubmit={handleSubmit}
