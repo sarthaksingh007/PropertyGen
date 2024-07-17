@@ -8,6 +8,7 @@ import ProCard from "./component/ProCard";
 import { ChatbotContext } from "./chatContext";
 import Chatbot from "./component/chatbot/Chatbot";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Aboutus from "./component/Aboutus.jsx";
 
 function App() {
   const { showChatbot } = useContext(ChatbotContext);
@@ -30,6 +31,7 @@ function App() {
               )
             }
           />
+          <Route path="/aboutus" element={<Aboutus />} />
         </Routes>
         {!showChatbot && <Last />}
       </BrowserRouter>

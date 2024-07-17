@@ -26,13 +26,13 @@ const Header = () => {
             isOpen ? "opacity-100" : "opacity-0 hidden md:opacity-100 md:flex"
           }`}
         >
-          <Link to="/" className="mr-5 cursor-pointer sm:mb-0 mb-5  beviet ">
+          <Link to="/aboutus" className="mr-5 cursor-pointer sm:mb-0 mb-5  beviet ">
             About Us
           </Link>
-          <Link to="/" className="mr-5 cursor-pointer sm:mb-0 mb-5 beviet ">
+          {/* <Link to="/" className="mr-5 cursor-pointer sm:mb-0 mb-5 beviet ">
             Builder Forum
-          </Link>
-          <Link to="/" className="mr-5 cursor-pointer sm:mb-0 mb-5 beviet ">
+          </Link> */}
+          <Link to="/aboutus" className="mr-5 cursor-pointer sm:mb-0 mb-5 beviet ">
             Contact us
           </Link>
         </nav>
