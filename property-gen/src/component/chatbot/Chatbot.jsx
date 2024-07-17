@@ -239,20 +239,7 @@ function Chatbot() {
     text: "How can I help you today?",
     isUser: false,
   };
-  const messagesContainerRef = useRef(null);
-
-  const scrollToBottom = () => {
-    const container = messagesContainerRef.current;
-    if (container) {
-      const { scrollHeight, clientHeight } = container;
-      const maxScrollTop = scrollHeight - clientHeight;
-      container.scrollTop = Math.max(maxScrollTop, 0);
-    }
-  };
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+  
 
   return (
     <div
@@ -325,7 +312,7 @@ function Chatbot() {
               </div>
             </div>
           </div>
-          <div className="messages-container" ref={messagesContainerRef}>
+          <div className="messages-container" >
             {messages.map((msg, index) => (
               <Message
                 key={index}

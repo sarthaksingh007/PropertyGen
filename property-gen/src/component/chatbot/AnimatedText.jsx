@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import "./AnimatedText.css"; // Import CSS file for styling
-import ReactMarkdown from "react-markdown";
-import { HiSpeakerXMark } from "react-icons/hi2";
-import { HiSpeakerWave } from "react-icons/hi2";
+import { HiSpeakerXMark, HiSpeakerWave } from "react-icons/hi2";
 
 const AnimatedText = ({ message }) => {
   const [animatedText, setAnimatedText] = useState("");
@@ -11,6 +9,7 @@ const AnimatedText = ({ message }) => {
   const [speaking, setSpeaking] = useState(false);
   const [loading, setLoading] = useState(true);
   const [speakingInstance, setSpeakingInstance] = useState(null);
+  const textContainerRef = useRef(null);
 
   useEffect(() => {
     let currentIndex = 0;
@@ -31,14 +30,19 @@ const AnimatedText = ({ message }) => {
     return () => clearInterval(animationInterval);
   }, [message]);
 
+  useEffect(() => {
+    if (textContainerRef.current) {
+      textContainerRef.current.scrollTop = textContainerRef.current.scrollHeight;
+    }
+  }, [animatedText]);
+
   const utterance = new SpeechSynthesisUtterance();
   useEffect(() => {
     window.speechSynthesis.onvoiceschanged = () => {
       let voices = window.speechSynthesis.getVoices();
-      console.log(voices, "voices");
       utterance.voice = voices.find(
         (voice) => voice.name === "Microsoft Hazel - English (United Kingdom)"
-      ); // Set the voice to the first available voice, you can change the index to select a different voice
+      );
     };
   });
 
@@ -56,40 +60,38 @@ const AnimatedText = ({ message }) => {
     };
 
     setSpeakingInstance(utterance);
-    console.log(window.speechSynthesis.speak(utterance), "instance", utterance);
+    window.speechSynthesis.speak(utterance);
   };
 
   const stopSpeaking = () => {
-    console.log("working", speakingInstance);
     if (speakingInstance) {
-      console.log("working2");
       window.speechSynthesis.cancel();
       setSpeaking(false);
     }
   };
+
   const parseMarkdown = (text) => {
     const formattedText = text.split('\n').map(line => {
-        if (line.trim() === '') {
-            return '<br>'; // Preserve empty lines
-        } else if (line.startsWith("- **")) {
-            return `<p><strong>${line.replace("- **", '').trim()}</strong></p>`; // Bold headings
-        } else {
-            const replacedText = line.replace(/\*\*(.*?)\*\*/g, (match, p1) => {
-                return `<strong>${p1}</strong>`;
-            });
-            return `<p>${replacedText}</p>`; // Wrap each line in <p> tags
-        }
+      if (line.trim() === '') {
+        return '<br>'; // Preserve empty lines
+      } else if (line.startsWith("- **")) {
+        return `<p><strong>${line.replace("- **", '').trim()}</strong></p>`; // Bold headings
+      } else {
+        const replacedText = line.replace(/\*\*(.*?)\*\*/g, (match, p1) => {
+          return `<strong>${p1}</strong>`;
+        });
+        return `<p>${replacedText}</p>`; // Wrap each line in <p> tags
+      }
     }).join('');
 
     return formattedText;
-};
-
+  };
 
   const responseBlocks = animatedText.split("\n\n");
 
   return (
     <>
-      <div>
+      <div ref={textContainerRef} style={{ maxHeight: '200px', overflowY: 'auto' }}>
         {responseBlocks.map((block, index) => (
           <div key={index}>
             {/* Parse Markdown syntax for each block */}
