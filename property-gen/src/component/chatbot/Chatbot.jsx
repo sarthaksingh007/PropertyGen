@@ -37,33 +37,33 @@ function Chatbot() {
   };
 
   // Making lead id such that the lead id is generated only once
-  const api_url = "https://vercel-pexapi.vercel.app/";
+  // const api_url = "https://vercel-pexapi.vercel.app/";
+  const api_url = "http://localhost:10000/api/";
   // const api_url = "http://localhost:5000/";
 
   useEffect(() => {
     // Function to fetch the leadId
-    const fetchLeadId = () => {
-      fetch(api_url + "fetchip")
-        .then((response) => response.text())
-        .then((ip) => {
-          console.log("User IP: ", ip);
-          const currDate = new Date();
-          const date_time = currDate.toISOString();
-          const newLeadId = date_time + ip;
-          setLeadId(newLeadId);
-          console.log(`The new lead is: ${newLeadId}`);
-        })
-        .catch((e) => {
-          console.error("Error: ", e);
-        });
+    const fetchLeadId = async () => {
+      try {
+        const response = await fetch(api_url + "fetch-ip");
+        const ip = await response.text();
+        console.log("User IP: ", ip);
+        const currDate = new Date();
+        const date_time = currDate.toISOString();
+        const newLeadId = date_time + ip;
+        setLeadId(newLeadId);
+        console.log(`The new lead is: ${newLeadId}`);
+      } catch (e) {
+        console.error("Error: ", e);
+      }
     };
 
     // Call fetchLeadId function
     fetchLeadId();
-  }, []); // Empty dependency array to run the effect only once on mount
+  }, []);
 
   const saveHistory = async () => {
-    const url = api_url + "save";
+    const url = api_url + "update-chat-history";
 
     try {
       const response = await fetch(url, {
@@ -104,7 +104,7 @@ function Chatbot() {
       setIsLoading(true);
 
       const response = await axios.post(
-        api_url + "chat",
+        api_url + "send-message",
         {
           chat_history: updatedChatHistory,
           buffer_memory: bufferMemory,
@@ -239,7 +239,6 @@ function Chatbot() {
     text: "How can I help you today?",
     isUser: false,
   };
-  
 
   return (
     <div
@@ -312,7 +311,7 @@ function Chatbot() {
               </div>
             </div>
           </div>
-          <div className="messages-container" >
+          <div className="messages-container">
             {messages.map((msg, index) => (
               <Message
                 key={index}

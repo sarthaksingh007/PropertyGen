@@ -91,7 +91,7 @@ const AnimatedText = ({ message }) => {
 
   return (
     <>
-      <div ref={textContainerRef} style={{ maxHeight: '200px', overflowY: 'auto' }}>
+      <div  style={{ maxHeight: 'auto', overflowY: 'auto' }}>
         {responseBlocks.map((block, index) => (
           <div key={index}>
             {/* Parse Markdown syntax for each block */}
@@ -100,6 +100,7 @@ const AnimatedText = ({ message }) => {
             {index < responseBlocks.length - 1 && <br />}
           </div>
         ))}
+        <div ref={textContainerRef}></div>
       </div>
 
       <button

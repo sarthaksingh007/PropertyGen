@@ -17,7 +17,7 @@ const Aboutus = () => {
   return (
     <section className="sm:px-12 px-5 inter sm:mt-10 mt-4">
       <div>
-        <h1 className="text-white  text-left sm:my-5 my-4 font-extrabold sm:text-[2.7rem] text-3xl">
+        <h1 className="text-white  text-left sm:my-5 my-4 font-extrabold sm:text-[2.7rem] text-5xl">
           About Us
         </h1>
         <div className="sm:mb-5 mb-3">
