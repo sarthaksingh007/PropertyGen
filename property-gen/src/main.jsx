@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       domain="dev-oqeu2nb3dvlee8hw.us.auth0.com"
       clientId="zMvs6r0MKJ7TJuqSynISYuImYkMlxt1U"
       authorizationParams={{
-        redirect_uri: window.location.origin,
+        redirect_uri: "https://property-gen.vercel.app/chat",
       }}
     >
       <ChatbotProvider>
