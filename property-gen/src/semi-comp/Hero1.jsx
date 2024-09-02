@@ -1,69 +1,7 @@
-import { useContext, useEffect, useMemo, useState } from "react";
 import Gott from "./../assets/got.png";
-import search from "./../assets/search.png";
-import Chatbot from "./../component/chatbot/Chatbot";
-import { ChatbotContext } from "../chatContext";
-import { animate } from "framer-motion";
+
+import LoginButton from "./Login";
 const Hero1 = () => {
-  const { setShowChatbot } = useContext(ChatbotContext);
-  const shadowStyle = {
-    WebkitBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
-    MozBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
-    boxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
-  };
-  const [inputText, setInputText] = useState("");
-  const [showplaceholder, setShowplaceholder] = useState(true);
-  const [placeholder, setPlaceholder] = useState("");
-  const questions = useMemo(
-    () => [
-      "Should I rent or sell my house?",
-      "How to find the best deals?",
-      "Which neighborhoods are up-and-coming?",
-      "What are current real estate trends?",
-      "What is my property worth now?",
-    ],
-    []
-  );
-
-  useEffect(() => {
-    let currentIndex = 0;
-    const animateText = async () => {
-      const phrase = questions[currentIndex];
-
-      // Animate from empty string to full phrase
-      await animate(0, phrase.length, {
-        onUpdate: (latest) => {
-          setPlaceholder(phrase.slice(0, latest));
-        },
-        delay: 0.5,
-        duration: 0.5,
-      });
-
-      // Wait for 2 seconds after displaying full phrase
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // Animate from full phrase to empty string
-      await animate(phrase.length, 0, {
-        onUpdate: (latest) => {
-          setPlaceholder(phrase.slice(0, latest));
-        },
-        delay: 0.2,
-        duration: 0.5,
-      });
-
-      currentIndex = (currentIndex + 1) % questions.length;
-    };
-
-    const animationInterval = setInterval(animateText, 3500); // Run animation every 3.5 seconds
-
-    return () => clearInterval(animationInterval); // Clean up interval on component unmount
-  }, [questions]);
-
-  const handleClick = () => {
-    
-    setShowChatbot(true);
-  };
-
   return (
     <div className="herrr">
       <img src={Gott} alt="" className="sm:p-4  sm:w-2/6 w-3/5 p-5  mx-auto" />
@@ -75,7 +13,7 @@ const Hero1 = () => {
         </span>
       </p>
 
-      <div className="my-16">
+      {/* <div className="my-16">
         <form
           // onSubmit={handleSubmit}
           style={shadowStyle}
@@ -105,7 +43,8 @@ const Hero1 = () => {
             </div>
           </div>
         </form>
-      </div>
+      </div> */}
+      <LoginButton />
     </div>
   );
 };
