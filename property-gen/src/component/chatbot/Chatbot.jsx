@@ -3,24 +3,21 @@ import { animate } from "framer-motion";
 import axios from "axios";
 import "./chatbot.css";
 
-import Copilot from "./../../assets/propit4.png";
 import Copilot1 from "./../../assets/propit2.png";
 import Profile from "./../../assets/profile.jpeg";
 import AnimatedText from "./../chatbot/AnimatedText.jsx";
-import { ChatbotContext } from "../../../src/chatContext.jsx";
-import { IoPersonCircleOutline } from "react-icons/io5";
-import { TbMenu } from "react-icons/tb";
-import search from "./../../assets/search.png";
+
 import { TbDots } from "react-icons/tb";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { TiMicrophone } from "react-icons/ti";
 import { GrCopy } from "react-icons/gr";
 import { BsFillSendFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 // import PropertyList from "../../../component/PropertyList.jsx";
 
 function Chatbot() {
   const [messages, setMessages] = useState([]);
-  const [projectCard, setProjectCard] = useState();
+  // const [projectCard, setProjectCard] = useState();
   const [inputText, setInputText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showplaceholder, setShowplaceholder] = useState(true);
@@ -29,7 +26,9 @@ function Chatbot() {
   const [loadingData, setLoadingData] = useState(false);
   const [botReplyMarkdown, setBotReplyMarkdown] = useState(""); // State to hold bot's reply in Markdown format
   const [leadId, setLeadId] = useState("");
-  const { setShowChatbot, showChatbot } = useContext(ChatbotContext);
+  // const { setShowChatbot, showChatbot } = useContext(ChatbotContext);
+  const [showChatbot, setShowChatbot] = useState(true)
+  const navigate = useNavigate();
 
   // For the buffer memory
   const [bufferMemory, setBufferMemory] = useState([]);
@@ -165,14 +164,9 @@ function Chatbot() {
     sendMessage();
     setShowplaceholder(false);
     setLoadingData(true);
-    // sendChatHistoryToBackend();
   };
 
-  // const handleButtonClick = (value) => {
-  //   handledatashow();
-  //   setInputText(value);
-  //   sendMessage();
-  // };
+ 
 
   const handledatashow = () => {
     setDataShow(true);
@@ -256,21 +250,19 @@ function Chatbot() {
   return (
     <div
       className={
-        showChatbot
-          ? "dm mx-auto sm:w-full w-full bg-[#685ABF] bg-opacity-100 rounded-lg border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] pb-4"
-          : "dm mx-auto sm:w-2/4"
+           "dm mx-auto sm:w-full w-full bg-[#685ABF] bg-opacity-100 rounded-lg border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] pb-4"
+          
       }
     >
       <div
         className={
-          showChatbot
-            ? "bg-[#685ABF] p-3 rounded-t-[2.5rem] sticky top-0 w-full pt-5 z-20"
-            : "bg-[#685ABF] rounded-lg z-20 hidden pt-5"
+           "bg-[#685ABF] p-3 rounded-t-[2.5rem] sticky top-0 w-full pt-5 z-20"
+            
         }
       >
         <div className="flex flex-row justify-between items-center">
           <FaArrowLeftLong
-            onClick={() => setShowChatbot(false)}
+            onClick={() => navigate("/")}
             className="text-white text-xl"
           />
           <div className="flex items-center flex-col">
@@ -285,10 +277,8 @@ function Chatbot() {
       </div>
       <div
         className={
-          showChatbot
-            ? "messages-container pb-[4rem] z-30 relative rounded-t-[2.5rem] sm:h-[80vh] h-[90vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto bg-white"
-            : "messages-container pb-[4rem] z-30 relative rounded-t-[2.5rem] sm:h-50 h-[30vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto hidden bg-white"
-        }
+           "messages-container pb-[4rem] z-30 relative rounded-t-[2.5rem] sm:h-[80vh] h-[90vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto bg-white"
+           }
       >
         <div className="h-auto">
           <div className="chatbot-message m-1 p-1">
@@ -375,22 +365,19 @@ function Chatbot() {
           </div>
         </div>
         {/* </ScrollContainer> */}
-        {showChatbot && (
+       
           <div className="fixed bottom-0 w-full z-50">
             <form
               onSubmit={handleSubmit}
               style={showChatbot ? {} : shadowStyle}
               className={
-                showChatbot
-                  ? "sticky  bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  bg-white"
-                  : "flex  flex-row sticky bottom-0 sm:justify-between justify-center sm:items-start  rounded-full items-center py-2 sm:flex-nowrap flex-wrap sm:w-[98%]  mx-auto w-[80%]   bg-white"
+                 "sticky  bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  bg-white"
               }
             >
               <div
                 className={
-                  showChatbot
-                    ? "flex flex-row justify-between items-center bg-white rounded-xl w-full"
-                    : "flex flex-row justify-between items-center  w-full"
+                  "flex flex-row justify-between items-center bg-white rounded-xl w-full"
+                    
                 }
               >
                 {showChatbot && (
@@ -431,9 +418,9 @@ function Chatbot() {
               </div>
             </form>
           </div>
-        )}
+        
       </div>
-      {!showChatbot && (
+      {/* {!showChatbot && (
         <form
           onSubmit={handleSubmit}
           style={showChatbot ? {} : shadowStyle}
@@ -472,7 +459,7 @@ function Chatbot() {
             </div>
           </div>
         </form>
-      )}
+      )} */}
     </div>
   );
 }

@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsStars, BsList, BsX } from "react-icons/bs";
 import logo from "./../assets/propit1.png";
 import Dadu from "./../assets/propit2.png";
 import Back from "./../assets/back_btn.png";
 
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+import { ChatbotContext } from "../chatContext";
 
+const Header = (userData ) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const { setShowChatbot } = useContext(ChatbotContext);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+  console.log(userData,"userData");
+  const handleClick = () => {
+    
+    setShowChatbot(true);
   };
 
   return (
@@ -35,6 +42,23 @@ const Header = () => {
           <Link to="/" className="mr-5 cursor-pointer sm:mb-0 mb-5 beviet ">
             Contact us
           </Link>
+          {userData?.userData?.email_verified ? (
+            <Link
+              // onClick={}
+              to="/"
+              className="mr-5 cursor-pointer sm:mb-0 mb-5 beviet "
+            >
+              Logout
+            </Link>
+          ) : (
+            <Link
+              onClick={handleClick}
+              to="/"
+              className="mr-5 cursor-pointer sm:mb-0 mb-5 beviet "
+            >
+              Login
+            </Link>
+          )}
         </nav>
         <button
           aria-label="Toggle Menu"

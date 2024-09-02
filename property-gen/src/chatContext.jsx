@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export const ChatbotContext = createContext();
 
 export const ChatbotProvider = ({ children }) => {
-  const [showChatbot, setShowChatbot] = useState(false);
+  const [showChatbot, setShowChatbot] = useState(true);
 
   return (
     <ChatbotContext.Provider value={{ showChatbot, setShowChatbot }}>
