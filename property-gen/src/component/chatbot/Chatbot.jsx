@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { animate } from "framer-motion";
 import axios from "axios";
 import "./chatbot.css";
-
+import { withAuthenticationRequired } from "@auth0/auth0-react";
 import Copilot1 from "./../../assets/propit2.png";
 import Profile from "./../../assets/profile.jpeg";
 import AnimatedText from "./../chatbot/AnimatedText.jsx";
@@ -27,7 +27,7 @@ function Chatbot() {
   const [botReplyMarkdown, setBotReplyMarkdown] = useState(""); // State to hold bot's reply in Markdown format
   const [leadId, setLeadId] = useState("");
   // const { setShowChatbot, showChatbot } = useContext(ChatbotContext);
-  const [showChatbot, setShowChatbot] = useState(true)
+  const [showChatbot, setShowChatbot] = useState(true);
   const navigate = useNavigate();
 
   // For the buffer memory
@@ -166,8 +166,6 @@ function Chatbot() {
     setLoadingData(true);
   };
 
- 
-
   const handledatashow = () => {
     setDataShow(true);
   };
@@ -239,7 +237,10 @@ function Chatbot() {
   const messagesContainerRef = useRef(null);
   const scrollToBottom = () => {
     if (messagesContainerRef.current) {
-      messagesContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      messagesContainerRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+      });
     }
   };
 
@@ -250,14 +251,12 @@ function Chatbot() {
   return (
     <div
       className={
-           "dm mx-auto sm:w-full w-full bg-[#685ABF] bg-opacity-100 rounded-lg border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] pb-4"
-          
+        "dm mx-auto sm:w-full w-full bg-[#685ABF] bg-opacity-100 rounded-lg border-1 border-[#D6D6E6] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] pb-4"
       }
     >
       <div
         className={
-           "bg-[#685ABF] p-3 rounded-t-[2.5rem] sticky top-0 w-full pt-5 z-20"
-            
+          "bg-[#685ABF] p-3 rounded-t-[2.5rem] sticky top-0 w-full pt-5 z-20"
         }
       >
         <div className="flex flex-row justify-between items-center">
@@ -277,8 +276,8 @@ function Chatbot() {
       </div>
       <div
         className={
-           "messages-container pb-[4rem] z-30 relative rounded-t-[2.5rem] sm:h-[80vh] h-[90vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto bg-white"
-           }
+          "messages-container pb-[4rem] z-30 relative rounded-t-[2.5rem] sm:h-[80vh] h-[90vh] mx-auto sm:w-full w-full rounded-3xl my-2 overflow-auto bg-white"
+        }
       >
         <div className="h-auto">
           <div className="chatbot-message m-1 p-1">
@@ -365,60 +364,58 @@ function Chatbot() {
           </div>
         </div>
         {/* </ScrollContainer> */}
-       
-          <div className="fixed bottom-0 w-full z-50">
-            <form
-              onSubmit={handleSubmit}
-              style={showChatbot ? {} : shadowStyle}
+
+        <div className="fixed bottom-0 w-full z-50">
+          <form
+            onSubmit={handleSubmit}
+            style={showChatbot ? {} : shadowStyle}
+            className={
+              "sticky  bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  bg-white"
+            }
+          >
+            <div
               className={
-                 "sticky  bottom-0 flex flex-row sm:justify-between justify-center sm:items-start px-1 rounded-lg items-center py-2 sm:flex-nowrap flex-wrap  bg-white"
+                "flex flex-row justify-between items-center bg-white rounded-xl w-full"
               }
             >
-              <div
-                className={
-                  "flex flex-row justify-between items-center bg-white rounded-xl w-full"
-                    
-                }
-              >
-                {showChatbot && (
-                  <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
-                    <GrCopy className="text-3xl" />
-                  </div>
-                )}
-                {showChatbot && (
-                  <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
-                    <TiMicrophone className="text-3xl" />
-                  </div>
-                )}
-
-                <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
-                  <input
-                    type="text"
-                    value={inputText}
-                    placeholder={
-                      showplaceholder ? placeholder : "ask me anything..."
-                    }
-                    className="focus:outline-none w-full rounded-full text-md sm:px-3 p-[0.35rem]"
-                    onChange={handleInputChange}
-                    onClick={handleshow}
-                    required
-                  />
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="flex justify-center items-center gradient  text-black text-md px-1 rounded-full  relative h-10 sm:text-[10.5px]"
-                  >
-                    {isLoading ? (
-                      <div className="loader"></div>
-                    ) : (
-                      <BsFillSendFill className="text-4xl p-2 text-white" />
-                    )}
-                  </button>
+              {showChatbot && (
+                <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
+                  <GrCopy className="text-3xl" />
                 </div>
+              )}
+              {showChatbot && (
+                <div className="border border-gray-400 p-2 m-2 rounded-full text-gray-400">
+                  <TiMicrophone className="text-3xl" />
+                </div>
+              )}
+
+              <div className="flex flex-row justify-between items-center sm:w-[98%]  mx-auto w-[95%]  bg-white rounded-full p-1  border-gray-300 border-2">
+                <input
+                  type="text"
+                  value={inputText}
+                  placeholder={
+                    showplaceholder ? placeholder : "ask me anything..."
+                  }
+                  className="focus:outline-none w-full rounded-full text-md sm:px-3 p-[0.35rem]"
+                  onChange={handleInputChange}
+                  onClick={handleshow}
+                  required
+                />
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="flex justify-center items-center gradient  text-black text-md px-1 rounded-full  relative h-10 sm:text-[10.5px]"
+                >
+                  {isLoading ? (
+                    <div className="loader"></div>
+                  ) : (
+                    <BsFillSendFill className="text-4xl p-2 text-white" />
+                  )}
+                </button>
               </div>
-            </form>
-          </div>
-        
+            </div>
+          </form>
+        </div>
       </div>
       {/* {!showChatbot && (
         <form
@@ -463,5 +460,6 @@ function Chatbot() {
     </div>
   );
 }
+const ProtectedRoute=withAuthenticationRequired(Chatbot);
 
-export default Chatbot;
+export default ProtectedRoute;
