@@ -9,7 +9,6 @@ const Hero1 = () => {
       MozBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
       boxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
     };
-
   if (error) {
     console.error("Auth0 Error:", error);
   }
