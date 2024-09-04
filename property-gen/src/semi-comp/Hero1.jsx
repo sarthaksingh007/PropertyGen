@@ -1,9 +1,14 @@
 import Gott from "./../assets/got.png";
 import { useAuth0 } from "@auth0/auth0-react";
-import LoginButton from "./Login";
+
 const Hero1 = () => {
-  const { user,isAuthenticated } = useAuth0;
-  console.log(user,isAuthenticated, "in the hero1");
+  const { loginWithRedirect, user, logout, isAuthenticated, error } =
+    useAuth0();
+
+  if (error) {
+    console.error("Auth0 Error:", error);
+  }
+  console.log(loginWithRedirect, user, logout, isAuthenticated, error, "login");
 
   return (
     <div className="herrr">
@@ -15,7 +20,22 @@ const Hero1 = () => {
           consultant!
         </span>
       </p>
-      <LoginButton />
+      {isAuthenticated ? (
+        <button
+          onClick={() =>
+            logout({ logoutParams: { returnTo: window.location.origin } })
+          }
+        >
+          Log Out
+        </button>
+      ) : (
+        <button
+          className="text-white text-center"
+          onClick={() => loginWithRedirect()}
+        >
+          Log In
+        </button>
+      )}
     </div>
   );
 };

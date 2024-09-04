@@ -2,23 +2,21 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsStars, BsList, BsX } from "react-icons/bs";
 import logo from "./../assets/propit1.png";
-import Dadu from "./../assets/propit2.png";
 import Back from "./../assets/back_btn.png";
+import { useAuth0 } from "@auth0/auth0-react";
 
-import { ChatbotContext } from "../chatContext";
-
-const Header = (userData ) => {
+const Header = (userData) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { setShowChatbot } = useContext(ChatbotContext);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  console.log(userData,"userData");
-  const handleClick = () => {
-    
-    setShowChatbot(true);
-  };
+  const { loginWithRedirect, user, logout, isAuthenticated, error } =
+    useAuth0();
 
+  if (error) {
+    console.error("Auth0 Error:", error);
+  }
+  console.log(loginWithRedirect, user, logout, isAuthenticated, error, "login");
   return (
     <header className="text-white body-font  sm:px-8 px-1">
       <div className="container mx-auto flex flex-wrap sm:p-5 px-5 pt-5 pb-0 justify-between items-start md:flex-row sm:items-center">
@@ -42,22 +40,21 @@ const Header = (userData ) => {
           <Link to="/" className="mr-5 cursor-pointer sm:mb-0 mb-5 beviet ">
             Contact us
           </Link>
-          {userData?.userData?.email_verified ? (
-            <Link
-              // onClick={}
-              to="/"
-              className="mr-5 cursor-pointer sm:mb-0 mb-5 beviet "
+          {isAuthenticated ? (
+            <button
+              onClick={() =>
+                logout({ logoutParams: { returnTo: window.location.origin } })
+              }
             >
-              Logout
-            </Link>
+              Log Out
+            </button>
           ) : (
-            <Link
-              onClick={handleClick}
-              to="/"
-              className="mr-5 cursor-pointer sm:mb-0 mb-5 beviet "
+            <button
+              className="text-white text-center"
+              onClick={() => loginWithRedirect()}
             >
-              Login
-            </Link>
+              Log In
+            </button>
           )}
         </nav>
         <button
