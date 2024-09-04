@@ -27,6 +27,8 @@ const Hero1 = () => {
       </p>
       {isAuthenticated ? (
         <button
+        className=" sm:text-2xl text-xl block mx-auto text-white  mt-5 rounded-full px-6 py-2 "
+          style={shadowStyle}
           onClick={() =>
             logout({ logoutParams: { returnTo: window.location.origin } })
           }
