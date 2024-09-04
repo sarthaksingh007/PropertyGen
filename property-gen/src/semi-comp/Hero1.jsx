@@ -4,6 +4,11 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Hero1 = () => {
   const { loginWithRedirect, user, logout, isAuthenticated, error } =
     useAuth0();
+    const shadowStyle = {
+      WebkitBoxShadow: "0px 0px 27px 4px rgba(0,9,15,1)",
+      MozBoxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
+      boxShadow: "0px 0px 27px 4px rgba(0,9,31,1)",
+    };
 
   if (error) {
     console.error("Auth0 Error:", error);
@@ -26,14 +31,15 @@ const Hero1 = () => {
             logout({ logoutParams: { returnTo: window.location.origin } })
           }
         >
-          Log Out
+          You want to go?
         </button>
       ) : (
         <button
-          className="text-white text-center"
+          className=" sm:text-2xl text-xl block mx-auto text-white  mt-5 rounded-full px-6 py-2 "
+          style={shadowStyle}
           onClick={() => loginWithRedirect()}
         >
-          Log In
+          Play with Bot, Click here
         </button>
       )}
     </div>
